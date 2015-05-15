@@ -5,7 +5,7 @@ class ContatosController extends AdministracaoAppController
 	public function index()
 	{
 		$options = array(
-			'fields' => array('Contato.id', 'Contato.nome', 'Contato.email', 'Contato.assunto', 'Contato.telefone', 'Contato.created', 'Contato.status'),
+			'fields' => array('Contato.id', 'Contato.nome', 'Contato.tipo', 'Contato.email', 'Contato.assunto', 'Contato.telefone', 'Contato.created', 'Contato.status'),
 			'conditions' => array(), //array('Contato.id >= 1'),
 			'order' => array('Contato.id' => 'DESC'),
 			'limit' => 10
