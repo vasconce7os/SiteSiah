@@ -67,6 +67,8 @@ class ContatosController extends AdministracaoAppController
 			$view->set('contatoInBrowser', $this-> request-> data);
 			$view->set('contatoInDB', $contato);
 			$resposta = $view->render('email_resposta', 'ajax');
+			//echo($resposta);
+			//exit;
 			$contatoForDB['Contato']['id'] = $this-> Contato-> id;
 			$contatoForDB['Contato']['admin_id'] = $this-> logged-> Admin-> id;
 			$contatoForDB['Contato']['status'] = 'respondido';
