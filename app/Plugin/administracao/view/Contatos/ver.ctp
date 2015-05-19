@@ -32,14 +32,7 @@ echo ($this-> Html-> tag('h1', $title_for_layout, array('class'=> "centrar")));
 				<?php echo($this->Time->format($this-> request-> data['Contato']['created'], '%d/%M/%Y as %H:%M')); ?>
 			</span>
 		</div>
-		<div class="LabalAndValue">
-			<label>
-				Mensagem:
-			</label>
-			<span>
-				<?php echo($this-> request-> data['Contato']['msg']); ?>
-			</span>
-		</div>
+
 		<div class="LabalAndValue">
 			<label>
 				Telefone:
@@ -120,3 +113,21 @@ switch($this-> request-> data['Contato']['status'])
 	}
 
 ?>
+	
+		<div class="LabalAndValue">
+			<label>
+				Mensagem:
+			</label>
+			<div style="overflow:auto; text-align: justify">
+                <?php
+                //pr($contatoInDB);
+                $content = explode("\n", $this-> request-> data['Contato']['msg']);
+
+                foreach ($content as $line):
+                    echo '' . $line . "<br />\n";
+                endforeach;
+                ;
+                ?>
+                
+			</div>
+		</div>
