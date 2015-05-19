@@ -44,17 +44,17 @@ class ContatosController extends AppController
 				$this->autoRender = false;
 				//exit;
 				$view = new View($this, false);
-				$view->set('contato', $data);
+				$view->set('contatoInDB', $data);
 				$view->viewPath = 'Contatos';
 				//$this-> layout = 'ajax';
 				$conteudo = $view->render('enviar', 'ajax');
 				//echo"antes ";
 				//pr($conteudo);
 				//echo" depois ";
-				//$this->log('Antes da parada do email');
+				$this->log('Antes da parada do email');
 				//exit;
 				$retEmail =        true; //$this-> enviaEmail("site@oseuestoque.com", 'Contato via site de: '.@$data['Contato']['nome'], $conteudo, 'O seu estoque');
-				$retEmailCliente = $this-> enviaEmail($data['Contato']['email'], 'Recebemos seu contato '.@$data['Contato']['nome'], "<p>Obrigado por nos contactar, em breve sua mensagem será lida e se nescessário retornaremos</p><p>Sua mensagem: </p>".'<pre>'.$data['Contato']['msg'].'<pre>', $this-> sisCliente['nome']);
+				$retEmailCliente = $this-> enviaEmail($data['Contato']['email'], 'Recebemos seu contato '.@$data['Contato']['nome'], $conteudo, $this-> sisCliente['nome']);
 				/*
 				if($retEmail == true)
 				{
