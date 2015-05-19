@@ -1,77 +1,119 @@
 
-<!-- inicio Contatos/enviar.ctp -->
-
-	<?php
-	?>
-
-
-<h1>
-	Novo Cotato
-</h1>
 <?php 
-//pr($contato);
+        $pageURL = 'http';
+        if (@$_SERVER["HTTPS"] == "on")
+        {
+            $pageURL .= "s";
+        }
+        $pageURL .= "://";
+        if ($_SERVER["SERVER_PORT"] != "80")
+        {
+            $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+        } else
+        {
+            $pageURL .= $_SERVER["SERVER_NAME"];
+        }
+
+    
 ?>
-<table BORDER=1>
-    <tr>
-    	<td align="justify" colspan="2">
-    		O formulário de contato do site da SIAH recebeu um contato
-    	</td>
-	<tr>
-		<td>
-			Remetente
-		</td>
-		<td>
-			<?php echo($contato['Contato']['nome']) ?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Email
-		</td>
-		<td>
-			<a href="mailto:<?php echo($contato['Contato']['email']) ?>">
-				<?php echo($contato['Contato']['email']) ?>
-			</a>
-			<br />
-			Não há nenhuma verificação quanto a autenticidade deste email
-		</td>
-	</tr>
-	<tr>
-    	<td>
-    		Assunto
-    	</td>
-    	<td>
-    		<?php echo($contato['Contato']['assunto']) ?>
-    	</td>
-  	</tr>
-  	<tr>
-    	<td align="center" colspan="2">
-    		<hr />
-    	</td>
-    </tr>
-    <tr>
-    	<td colspan="2">
-    		Mensagem
-    	</td>
-  	</tr>
-    <tr>
-    	<td align="justify" colspan="2">
-    		<strong>
-    			<?php echo($contato['Contato']['msg']. "\n") ?>
-    		</strong>
-    	</td>
-  	</tr>
-  	<tr>
-    	<td align="center" colspan="2">
-    		<hr />
-    	</td>
-    </tr>
-  	<tr>
-    	<td align="center" colspan="2">
-    		Desenvolvido com tecnologia SIAH
-    	</td>
-    </tr>
-</table>
+
+        <table style="background-color:rgb(204, 230, 228); margin: auto;" align="center" cellpadding="0" cellspacing="0" width="600">
+            <tbody>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" height="80px" width="220px">
+                            <tbody>
+                                <tr>
+                                    <td style="color:rgb(74, 66, 60);font-family:arial, helvetica, sans-serif;font-size:16px;">
+                                        <a target="_blank" href="<?php echo($pageURL  . $this-> request-> base); ?>" title="SIAH">
+                                            <img src="http://www.siahonline.com.br/img/logo_siah_220x80.png" alt="SIAH" style="margin:10px;min-height:auto; !important;max-width:100% !important;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="border-top-color:rgb(199, 199, 199);border-top-style:solid;border-top-width:1px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="color:rgb(74, 66, 60);font-family:arial, helvetica, sans-serif;font-size:16px;padding-left:0px;padding-right:0px;">
+                                        <h1 style="text-align:center; color: #2F58A4;">
+                                            Recebemos seu contato 
+                                            <em><?php echo($contatoInDB['Contato']['nome']); ?>
+                                            </em>
+                                        </h1>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody >
+                                <tr>
+                                    <td>
+                                        <p>Obrigado por nos contactar, em breve sua mensagem será lida e se nescessário retornaremos.</p>
+                                        <p>Sua mensagem: </p>
+                                        
+                                        <div style="overflow:auto; text-align: justify; color: ccc;">
+                                            <em>
+
+                                            <?php
+                                            //pr($contatoInDB);
+                                            $content = explode("\n", $contatoInDB['Contato']['msg']);
+
+                                            foreach ($content as $line):
+                                                echo '' . $line . "<br />\n";
+                                            endforeach;
+                                            ;
+                                            ?>
+
+                                            </em>
+                                        </div>
 
 
-<!-- fim Contatos/enviar.ctp -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <style type="text/css">
+                            #imgRight
+                            {
+                                  -webkit-filter: grayscale(100%);
+                                               -moz-filter: grayscale(100%);
+                                                -ms-filter: grayscale(100%);
+                                                 -o-filter: grayscale(100%);
+                                            filter: grayscale(100%);
+                            }
+                            #imgRight:hover
+                            {
+                                  -webkit-filter: grayscale(0%);
+                                               -moz-filter: grayscale(0%);
+                                                -ms-filter: grayscale(0%);
+                                                 -o-filter: grayscale(0%);
+                                            filter: grayscale(0%);
+                            }
+                        </style>
+                        <table style="border-top-color:rgb(199, 199, 199);border-top-style:solid;border-top-width:1px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="padding:20px 25px;color:rgb(74, 66, 60); font-size: 10pt; font-family:arial, helvetica, sans-serif;font-size:10pt;" width="80%">
+                                        Copyright 
+                                        <?php
+                                        echo date('Y');
+                                        ?>
+                                        <br>
+                                        Todos os direitos reservados.
+                                    </td>
+                                    <td style="padding:20px 25px;color:rgb(74, 66, 60); red; font-family:arial, helvetica, sans-serif;font-size:16px;" align="right" >
+                                        <a target="_blank" href="<?php echo($pageURL  . $this-> request-> base); ?>" title="SIAH">
+                                        <img id="imgRight" src="http://www.siahonline.com.br/img/logo_siah_simples_transp.png" alt="SIAH" 
+                                            style="border:0px none;min-height:auto !important;max-width:100% !important;
+                                            " 
+                                            height="30" width="80"
+                                        />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
