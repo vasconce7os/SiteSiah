@@ -43,3 +43,4 @@ Temporary Items
 .apdisk
 app/Config/database.php
 app/tmp/*
+*/error.log
