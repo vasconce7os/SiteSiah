@@ -74,14 +74,16 @@ class ContatosController extends AdministracaoAppController
 			$contatoForDB['Contato']['status'] = 'respondido';
 			$contatoForDB['Contato']['resposta'] = $resposta;
 			$salvou = $this-> Contato-> save($contatoForDB);
-			$this-> log('salvou: ');
+			$this-> log('salvou a marcação do email no banco: ');
 			$this-> log($salvou);
 
 			$this-> log('vai enviar o email');
 			$retEmailCliente = $this-> enviaEmail($contato['Contato']['email'], "Re: " . $contato['Contato']['assunto'], $resposta, $this-> sisCliente['nome']);
-			print_r($retEmailCliente, false);
-			$this-> log('enviaou o email');
-			//pr($conteudo);
+			//print_r($retEmailCliente, false);
+			$this-> log('ja deve ter enviado o email');
+			$this-> log('confira o log do conteúdo enviado via email');
+			$this-> log($retEmailCliente);
+			$this-> log('encerrou o log do conteúdo o log do conteúdo');
 			//exit;
 			$this-> Session-> setFlashSucesso( "Contato de cliente respondido");
 			$this-> redirect(array("plugin"=> "administracao", 'controller' => 'contatos', 'action' => 'ver', $this-> Contato-> id));
