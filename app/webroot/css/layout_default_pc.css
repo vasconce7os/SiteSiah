@@ -1,0 +1,20 @@
+
+/* 
+Apenas para PCs
+Novas alterações de layout 
+    author: Vasconcelos
+
+*/
+.container 
+{
+    width: 1000px;
+
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-inner, .nav-collapse, .nav-collapse, nav
+{
+    text-align: right;
+    float: right;
+}

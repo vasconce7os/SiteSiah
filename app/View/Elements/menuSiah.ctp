@@ -1,4 +1,3 @@
-
 <ul id="menu-menu-principal" class="nav">
 <?php
 foreach ($data as $key => $menu1)
@@ -16,7 +15,7 @@ foreach ($data as $key => $menu1)
 	}
 	?>
 		
-	<li id="<?php echo($key); ?>" class="<?php echo ($class); ?> menu-item menu-item-type-post_type menu-item-object-page menu-item-682">
+	<li id="<?php echo($key); ?>" class="<?php echo ($class); ?>">
 	
 		<a href="<?php echo($this-> request-> bases . $menu1['url']); ?>" >
 			<?php 

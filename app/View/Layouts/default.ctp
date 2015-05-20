@@ -53,25 +53,21 @@
 
 	<!-- CSS do wp -->
 	<link href="<?php echo($this-> request-> base); ?>/css/style.css" rel="stylesheet">
-	<link href="<?php echo($this-> request-> base); ?>/css/layout_default.css" rel="stylesheet">
-	<link href="<?php echo($this-> request-> base); ?>/css/style.css" rel="stylesheet">
 	
 	<link href="<?php echo($this-> request-> base); ?>/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo($this-> request-> base); ?>/css/font-awesome.min.css" rel="stylesheet">
 
-	<!--
-	<link href="<?php echo($this-> request-> base); ?>/css/bootstrap.min.css" rel="stylesheet">
-	-->
-
     <?php
-	// echo $this->Html->css ( 'svinstitucional' );
+	echo $this->Html->css ( 'layout_default' );
 	?>
     
+	<link href="<?php echo($this-> request-> base); ?>/css/layout_default_pc.css" rel="stylesheet" media="screen and (min-width: 992px), projection">
+
     <!-- 
     APP/View/Layouts/default.ctp
     -->
 </head>
-<body class="page page-id-692 page-template-default" itemscope="" itemtype="http://schema.org/WebPage">
+<body itemscope="" itemtype="http://schema.org/WebPage">
 
 	
 	<header id="header" role="banner">	
@@ -87,14 +83,14 @@
 			<div id="pub-header" class="span9">
 				<nav id="main-navigation" class="navbar" role="navigation">
 					<a class="assistive-text" href="#content" title="Pular para o conteúdo">Pular para o conteúdo</a>
-					<div class="navbar-inner">
+					<div class="navbar-inner">				
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span> 
 							<span class="icon-bar"></span> 
 							<span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse">
-								<nav>				        	
+								<nav>			        	
 						       	<?php
 									echo $this->element ( 'menuSiah', array (
 											'data' => $dataMenu 
