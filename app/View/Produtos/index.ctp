@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 </script>
 
-<article class="">
+<article class="container">
 	<header class="entry-header">
 		<h1 class="entry-title">
 			Produtos SIAH

@@ -80,7 +80,7 @@
 					<img src="<?php echo($this-> request-> base); ?>/img/logo_siah_220x80.png" title="SIAH soluções inteligentes" alt="logo SIAH" />
 				</a>
 			</div>
-			<div id="pub-header" class="span9">
+			<div id="pub-header">
 				<nav id="main-navigation" class="navbar" role="navigation">
 					<a class="assistive-text" href="#content" title="Pular para o conteúdo">Pular para o conteúdo</a>
 					<div class="navbar-inner">				
@@ -105,9 +105,10 @@
 			</div>
 		</div>
 		<div class="clearfix"></div>
+		<div id="listinha"></div>
 	</header>
 	<!-- #header -->
-	<section id="main" class="container">
+	<section id="main">
 
 				<?php echo $this->Session->flash(); ?>
 	

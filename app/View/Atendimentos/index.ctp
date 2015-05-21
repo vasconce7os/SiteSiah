@@ -31,7 +31,7 @@
 	    }
 	</style>
 
-
+	<div class="container">
 		<div class="tabbable"> <!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
 				<li>
@@ -268,7 +268,7 @@
 
 		<span class="fa fa-fw fa-coffee"></span>
 
-
+	</div>
 
 
 

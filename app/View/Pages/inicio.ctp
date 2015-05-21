@@ -12,7 +12,7 @@
 
 
 
-<div class="container">
+<div class="">
 		<div class="clearfix"></div>
 
 
@@ -64,7 +64,7 @@
 
 
 
-	<div id="primary" class="span12 alpha">
+	<div id="primary" class="container">
 
 		<div id="content" role="main" class="home">
 

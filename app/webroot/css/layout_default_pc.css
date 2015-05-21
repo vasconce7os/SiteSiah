@@ -5,12 +5,13 @@ Novas alterações de layout
     author: Vasconcelos
 
 */
-.container 
+.container, article
 {
     width: 1000px;
 
     padding-right: 0px;
     padding-left: 0px;
+    margin: 0 auto;
 }
 
 .navbar-inner, .nav-collapse, .nav-collapse, nav

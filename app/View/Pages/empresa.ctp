@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 
 
-
+<div class="container">
 	<header class="entry-header">
 		<h1 class="entry-title">
 			Empresa
@@ -57,5 +57,5 @@ $(document).ready(function(){
 			serão resultados de serviços prestados avaliados pela
 			qualidade.&#8221;</p>
 	</div>
-	<!-- .entry-content -->
-</article>
+	<!-- .entry-content zica -->
+</div>

@@ -4471,6 +4471,9 @@ button .caret {
   margin-top: 8px;
 }
 
+/*
+Vasconcelos comentou
+
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   background-color: transparent;
@@ -4488,6 +4491,7 @@ button .caret {
   border-bottom: 3px solid #0B8FC6;
   font-weight: bold;
 }
+*/
 
 .navbar .btn-navbar {
   display: none;
@@ -7359,11 +7363,12 @@ textarea.error {
 
 
 /* alterações realizadas por Jair Rebello*/
-
+/*
 header{
   background: white;
   padding: 10px 0px;
 }
+*/
 #logo{
   padding-bottom: 10px;
   float: left;
