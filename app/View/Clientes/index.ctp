@@ -174,7 +174,7 @@ $(document).ready(function(){
 			<li>
 				<h3>
 					<a href="<?php echo($this-> request-> base); ?>/clientes/forca_construtiva.html">
-						Forçã Construtiva	
+						Força Construtiva	
 					</a>
 				</h3>
 				<p>
