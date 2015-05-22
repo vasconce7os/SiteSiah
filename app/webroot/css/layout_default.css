@@ -199,3 +199,8 @@ body > header
 {
     border-top: 3px solid #7CC145;
 }
+
+section .container
+{
+    margin-top: 20px;
+}
