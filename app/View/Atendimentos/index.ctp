@@ -9,10 +9,7 @@
 		</script>
 
 		<style type="text/css">
-		.tab-pane
-		{
-			
-		}
+
 		</style>
 
 	<style>
