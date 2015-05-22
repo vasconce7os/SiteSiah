@@ -125,7 +125,7 @@ nav > ul > li > a
 
 
 
-
+/*
 nav > ul li:before,
 nav > ul li:after {
   position: absolute;
@@ -173,6 +173,7 @@ nav > ul li.active {
   z-index: 2;
   border-bottom-color: #2C59A3;
 }
+*/
 
 
 
@@ -183,7 +184,7 @@ nav > ul li.active {
 {
     z-index: 1;
     background-color: #7CC145;
-    margin-top: -4px;
+    /* margin-top: -4px; */
     background-color: #7CC145;
     height: 4px;
     -webkit-box-shadow: 5px 5px 7px 0px rgba(50, 50, 50, 0.75);
