@@ -99,7 +99,7 @@ body > header
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
     background-color: #2C59A3;
-    color: black;
+    color: white;
     text-decoration: none;
     /*
     border-top: 3px solid #7CC145;
@@ -114,10 +114,9 @@ body > header
 nav > ul > li 
 {
     min-height: 120px;
+    font-weight: bold;
 }
-#pub-header
-{
-}
+
 .navbar
 {
     margin-bottom: 0px;
@@ -201,7 +200,11 @@ nav > ul li.active {
     margin-top: -4px;
     background-color: #7CC145;
     height: 4px;
+    -webkit-box-shadow: 5px 5px 7px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    5px 5px 7px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         5px 5px 7px 0px rgba(50, 50, 50, 0.75);
 }
+
 body > header
 {
     padding-top: 10px;
