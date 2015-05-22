@@ -14,8 +14,16 @@ Novas alterações de layout
     margin: 0 auto;
 }
 
+
 .navbar-inner, .nav-collapse, .nav-collapse, nav
 {
     text-align: right;
     float: right;
 }
+
+nav > ul > li
+{
+	border-right: 1px solid black;
+}
+		
+nav > ul > li:last-child {border-right:none;}
