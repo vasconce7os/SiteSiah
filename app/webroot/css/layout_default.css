@@ -105,6 +105,7 @@ nav > ul > li
 {
     min-height: 120px;
     font-weight: bold;
+    margin-left: 3px;
 }
 .navbar
 {
