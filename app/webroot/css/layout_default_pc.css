@@ -155,3 +155,18 @@ nav > ul > li:last-child:after
 {
   content: none;
 }
+/*
+ fim das regras do menu
+*/
+
+.caixa1Terco
+{
+	padding: 30px;
+	width: 310px;
+	text-align: justify;
+}
+.caixa1Terco:first-child
+{
+	margin-left: 35px solid transparent;
+
+}

@@ -68,19 +68,7 @@ h2 a
 {
   margin-top: 20px;
 }
-/*
-body > header
-{
-  background: -moz-linear-gradient(top, rgba(15,51,86,1) 0%, rgba(159,173,187,0) 6%, rgba(255,255,255,0) 10%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(15,51,86,1)), color-stop(6%,rgba(159,173,187,0)), color-stop(10%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(15,51,86,1) 0%,rgba(159,173,187,0) 6%,rgba(255,255,255,0) 10%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(15,51,86,1) 0%,rgba(159,173,187,0) 6%,rgba(255,255,255,0) 10%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(15,51,86,1) 0%,rgba(159,173,187,0) 6%,rgba(255,255,255,0) 10%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(15,51,86,1) 0%,rgba(159,173,187,0) 6%,rgba(255,255,255,0) 10%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f3356', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 
-}
-*/
 #logo_siah_simples
 {
   margin-right: 20px;
@@ -93,3 +81,50 @@ body > header
 {
   color: red;
 }
+
+.iconOfLine
+{
+    width: 25px;
+}
+
+#nossosClientes
+{
+    text-align: center;
+    width: 65%;
+    margin: 0px auto;
+    border-bottom: 3px solid #ccc; 
+}
+#nossosClientes a
+{
+    text-decoration: none;
+    color: #597A96;
+}
+#owl-demo
+{
+    background-color: red;
+    height: 198px;
+}
+
+/* bloco trazido  do html */
+#owl-demo .item
+{
+    background: #42bdc2;
+    color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: right;
+}
+
+#owl-demo .item:first-child
+{
+    /*padding-left: 30px;*/
+}
+#owl-demo .item img{
+    display: block;
+    width: 152px;
+    height: 144px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

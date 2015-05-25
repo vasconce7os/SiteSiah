@@ -44,7 +44,7 @@
 			// itemsDesktopSmall : false,
 			// itemsTablet: false,
 			// itemsMobile : false
-
+			//transitionStyle: 'fade',
 			});
 
 			});
@@ -68,57 +68,37 @@
 
 		<div id="content" role="main" class="home">
 
-			<div class="span4 alpha">
-
+			<div class="span4 caixa1Terco">
 				<div class="destaque-servicos">
-
-					<img
-						src="<?php echo($this-> request-> base); ?>/img/iconTecnologia.png" />
-
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_tecnologia.png" class="iconOfLine" />
 					<h3>Tecnologia</h3>
-
 				</div>
-
-				<div class="texto-servicos">A SIAH Soluções inteligentes é uma
+				<div class="texto-servicos">
+					A SIAH Soluções inteligentes é uma
 					empresa especializada em criar e desenvolver soluções que
-					encaminhem a sua empresa as melhores posições do mercado...</div>
-
-			</div>
-
-			<div class="span4">
-
-				<div class="destaque-servicos">
-
-					<img
-						src="<?php echo($this-> request-> base); ?>/img/iconProdutos.png" />
-
-					<h3>Produtos</h3>
-
+					encaminhem a sua empresa as melhores posições do mercado...
 				</div>
-
+			</div>
+			<div class="span4 caixa1Terco">
+				<div class="destaque-servicos">
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_produtos.png" class="iconOfLine" />
+					<h3>Produtos</h3>
+				</div>
 				<div class="texto-servicos">O A7 é um software desenvolvido na
 					plataforma Delphi, com tecnologia SQL, destinado a suprir todas as
-					necessidades de controle de empresas comerciais...</div>
-
-			</div>
-
-			<div class="span4">
-
-				<div class="destaque-servicos">
-
-					<img
-						src="<?php echo($this-> request-> base); ?>/img/iconSuporte.png" />
-
-					<h3>Suporte</h3>
-
+					necessidades de controle de empresas comerciais...
 				</div>
-
+			</div>
+			<div class="span4 caixa1Terco">
+				<div class="destaque-servicos">
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_suporte.png" class="iconOfLine" />
+					<h3>Suporte</h3>
+				</div>
 				<div class="texto-servicos">Queremos ajudá-lo da melhor forma
 					possível, tirando dúvidas e fornecendo informações necessárias para
-					o melhor funcionamento de nossos produtos...</div>
-
+					o melhor funcionamento de nossos produtos...
+				</div>
 			</div>
-
 			<div class="clearfix margin-25"></div>
 
 
@@ -126,13 +106,11 @@
 
 
 
-			<h3>
+			<h3 id="nossosClientes">
 				<a href="<?php echo($this-> request-> base); ?>/clientes">
-					Clientes
+					Nossos clientes
 				</a>
 			</h3>
-
-			<div class="clearfix margin-25"></div>			
 
 	    <div id="demo" class="container">
 	        <div id="owl-demo" class="owl-carousel">
@@ -278,27 +256,6 @@
 
 
 		<!-- Demo clientes -->
-
-		<style>
-		#owl-demo .item
-		{
-			/* background: #42bdc2;*/
-			padding: 30px 0px;
-			margin: 5px;
-			color: #FFF;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-			text-align: center;
-		}
-
-		#owl-demo .item img
-		{
-			width: 120px;
-		}
-		</style>
-
-
 		<script>
 		$(document).ready(function() {
 
@@ -330,11 +287,14 @@
 
 			 $("#owl-demo").owlCarousel({
  
-		      autoPlay: 6000,
+		      //autoPlay: 6000,
 		 
 		      items : 4,
 		      itemsDesktop : [1199,3],
-		      itemsDesktopSmall : [979,3]
+		      itemsDesktopSmall : [979,3],
+
+		      //Vasconcelos
+		      pagination: false
 		 
 		  });
 
