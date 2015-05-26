@@ -189,7 +189,7 @@ nav > ul > li:last-child:after
     float: left;
     width: 61px;
     height: 60px;
-    background-image: url(/sitesiah/img/seta_esquerda.png);
+    background-image: url(/img/seta_esquerda.png);
     /*background-color: blue;*/
 }
 .owl-next
@@ -198,7 +198,7 @@ nav > ul > li:last-child:after
     float: right;
     width: 61px;
     height: 60px;
-    background-image: url(/sitesiah/img/seta_direita.png);
+    background-image: url(/img/seta_direita.png);
 }
 #meio
 {
