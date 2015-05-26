@@ -63,7 +63,7 @@ h2 a
   color: #333333;
 }
 
-/* paginas /atendimentos*/
+/* paginas atendimentos*/
 .tab-content
 {
   margin-top: 20px;
@@ -101,30 +101,35 @@ h2 a
 }
 #owl-demo
 {
-    background-color: red;
     height: 198px;
 }
 
 /* bloco trazido  do html */
 #owl-demo .item
 {
-    background: #42bdc2;
     color: #FFF;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     text-align: right;
+    margin-top: 24px;
 }
 
 #owl-demo .item:first-child
 {
     /*padding-left: 30px;*/
 }
-#owl-demo .item img{
+#owl-demo .item img
+{
     display: block;
     width: 152px;
     height: 144px;
     margin-left: auto;
     margin-right: auto;
+}
+#olw-demo
+{
+    margin-top: 20px;
+    padding-top: 20px;
 }
 
