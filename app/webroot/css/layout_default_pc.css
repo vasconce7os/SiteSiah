@@ -170,3 +170,49 @@ nav > ul > li:last-child:after
 	margin-left: 35px solid transparent;
 
 }
+
+
+.owl-buttons
+{
+    color: #FFF;
+    width: 100%;
+    margin-top: -200px;
+    margin-bottom: 200px;
+    background-color: green;
+    display: table;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.owl-prev
+{
+    border: 0px solid #7CC145;
+    float: left;
+    width: 61px;
+    height: 60px;
+    background-image: url(/sitesiah/img/seta_esquerda.png);
+    /*background-color: blue;*/
+}
+.owl-next
+{
+    border: 0px;
+    float: right;
+    width: 61px;
+    height: 60px;
+    background-image: url(/sitesiah/img/seta_direita.png);
+}
+#meio
+{
+    width: 50%;
+    height: 60px;
+}
+.owl-next:hover, .owl-prev:hover, 
+.owl-theme .owl-controls.clickable .owl-buttons div:hover
+{
+    opacity: 0.5;
+}
+/*
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+    filter: Alpha(Opacity=100);
+    opacity: ;
+}
+*/

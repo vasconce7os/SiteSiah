@@ -78,7 +78,7 @@ class PagesController extends AppController {
 		$this-> set('title_for_layout', "SIAH");
 		//$this-> layout = 'banner';
 		$this-> cssExtra[] = array('file'=> 'css/owl-carousel/owl.carousel', 'comment'=> "Extra para Owl Carousel Assets", 'shortPath'=> true, 'media'=> "all");
-		$this-> cssExtra[] = array('file'=> 'css/owl-carousel/owl.theme', 'comment'=> "regra das setas do banner", 'shortPath'=> true, 'media'=> "all");
+		$this-> cssExtra[] = array('file'=> 'css/owl-carousel/owl.theme', 'comment'=> "regra do banner e carousel de logos de clientes", 'shortPath'=> true, 'media'=> "all");
 		$this-> jsExtra[] = array('file'=> 'owl-carousel/owl.carousel', 'comment'=> "banner e carousel de clientes", 'shortPath'=> true);
 		$this-> set('jsExtra', $this-> jsExtra);
 		$this-> set('cssExtra', $this-> cssExtra);

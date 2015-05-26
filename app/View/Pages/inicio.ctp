@@ -20,16 +20,20 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<script type="text/javascript">
+
 		$(document).ready(function() {
 
 		$("#owlBanner").owlCarousel({
-
-		navigation : false, // Show next and prev buttons
+		pagination: false,
+		navigation : true, // Show next and prev buttons
 		slideSpeed : 300,
 	    autoPlay: 4500,
 		paginationSpeed : 400,
 		singleItem:true,
-		navigationText : ["anterior","proximo"],
+		navigationText: [
+		" ",
+		" "
+      ],//["Anterior","Próximo"],
 
 		// "singleItem:true" is a shortcut for:
 		// items : 1, 
@@ -267,7 +271,7 @@ $(document).ready(function(){
 
 				 $("#owl-demo").owlCarousel({
 	 
-			      //autoPlay: 6000,
+			      autoPlay: 6000,
 			 
 			      items : 4,
 			      itemsDesktop : [1199,3],

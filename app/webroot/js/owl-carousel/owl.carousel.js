@@ -416,10 +416,12 @@ if (typeof Object.create !== "function") {
                 "class" : "owl-next",
                 "html" : base.options.navigationText[1] || ""
             });
-
+            
             buttonsWrapper
                 .append(base.buttonPrev)
+                .append("<div id=\"meio\"></div>") // Vasconcelos
                 .append(base.buttonNext);
+            
 
             buttonsWrapper.on("touchstart.owlControls mousedown.owlControls", "div[class^=\"owl\"]", function (event) {
                 event.preventDefault();
