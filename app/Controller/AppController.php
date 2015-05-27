@@ -18,9 +18,7 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('Controller', 'Controller');
-
 /**
  * Application Controller
  *
@@ -35,14 +33,11 @@ class AppController extends Controller
 	var $extPages = '.html';
 	var $meta; // matatag do html
 	var $sisCliente; // informações do cliente da Siah
-
 	var $cssExtra = array();
 	var $jsExtra = array();
-
 	var $infoMsgClass = 'alert alert-info';
 	var $errorMsgClass = 'alert alert-error';
 	var $successMsgClass = 'alert alert-success';
-
 	public function beforeFilter()
 	{
 		$this-> sisCliente['nome'] = "SIAH";
@@ -62,7 +57,6 @@ class AppController extends Controller
 		$this-> set('meta', $this-> meta);
 		$this-> set('title_for_layout', "SIAH Soluções Inteligentes");
 		$this-> set('dataMenu', $this-> generateMenu());
-
 		
 		$cssExtra = array();
 		$this->set('cssExtra', $this-> cssExtra);
@@ -78,7 +72,6 @@ class AppController extends Controller
 	
 	
 	
-
 	function curPageURL()
 	{
 		$pageURL = 'http';
@@ -98,7 +91,6 @@ class AppController extends Controller
 		return $pageURL;
 	}
 	
-
 	public function setMetaTags($tags = array())
 	{
 		//pr($tags);
@@ -121,7 +113,6 @@ class AppController extends Controller
 		//exit;
 	}
 	
-
 	public function generateMenu()
 	{
 	
@@ -178,7 +169,6 @@ class AppController extends Controller
 		);
 		return $dataMenu;
 	}
-
 	/**
      *
      * @param string $to
@@ -234,3 +224,4 @@ class AppController extends Controller
         }
     }
 }
+// Agora esst troço deve estar no Controller com maiúsculo
