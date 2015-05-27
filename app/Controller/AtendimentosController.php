@@ -11,6 +11,7 @@ class AtendimentosController extends AppController {
  * This controller does not use a model
  *
  * @var array
+ agora no maiúsculo
  */
 	public $uses = array();
 
