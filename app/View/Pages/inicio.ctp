@@ -62,7 +62,7 @@ $(document).ready(function(){
 		<div id="content" role="main" class="home">
 			<div class="span4 caixa1Terco">
 				<div class="destaque-servicos">
-					<img src="<?php echo($this-> request-> base); ?>/img/ico_tecnologia.png" class="iconOfLine" />
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_tecnologia.png" class="iconOfLine" alt="tecnologia SIAH" />
 					<h3>Tecnologia</h3>
 				</div>
 				<div class="texto-servicos">
@@ -73,7 +73,7 @@ $(document).ready(function(){
 			</div>
 			<div class="span4 caixa1Terco">
 				<div class="destaque-servicos">
-					<img src="<?php echo($this-> request-> base); ?>/img/ico_produtos.png" class="iconOfLine" />
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_produtos.png" class="iconOfLine" alt="produtos SIAH" />
 					<h3>Produtos</h3>
 				</div>
 				<div class="texto-servicos">O A7 é um software desenvolvido na
@@ -83,7 +83,7 @@ $(document).ready(function(){
 			</div>
 			<div class="span4 caixa1Terco">
 				<div class="destaque-servicos">
-					<img src="<?php echo($this-> request-> base); ?>/img/ico_suporte.png" class="iconOfLine" />
+					<img src="<?php echo($this-> request-> base); ?>/img/ico_suporte.png" class="iconOfLine" alt="suporte SIAH" />
 					<h3>Suporte</h3>
 				</div>
 				<div class="texto-servicos">Queremos ajudá-lo da melhor forma
