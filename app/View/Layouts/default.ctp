@@ -68,12 +68,7 @@
     -->
 </head>
 <body itemscope="" itemtype="http://schema.org/WebPage">
-
-	
-	<header id="header" role="banner">	
-		<!-- <div id="subheader" class="">
-			<div class="container">contato@siahonline.com.br | (92) 3088-6287</div>
-		</div> -->
+	<header id="header" role="banner">
 		<div class="container">
 			<div id="logo" class="span3 alpha">
 				<a href="<?php echo($this-> request-> base); ?>/"> 
@@ -90,13 +85,12 @@
 							<span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse">
-								<nav>			        	
+							<nav>			        	
 						       	<?php
 									echo $this->element ( 'menuSiah', array (
 											'data' => $dataMenu 
 									) );
 								?>
-
 				            </nav>
 						</div>
 					</div>

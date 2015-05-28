@@ -40,8 +40,13 @@ Router::parseExtensions('html');
 
 	Router::connect('/empresa', array('controller' => 'pages', 'action'=> 'empresa'));
 	Router::connect('/portfolio', array('controller' => 'pages', 'action'=> 'portfolio'));
-	//Router::connect('/produtos', array('controller' => 'pages', 'action'=> 'produtos'));
-	//Router::connect('/contato', array('controller' => 'pages', 'action'=> 'contatos'));
+	
+	//sitemap
+	Router::connect(
+	    '/:rota_mapa',
+	    array('controller' => 'pages', 'action'=> 'sitemap'),
+	    array('rota_mapa' => 'mapa|sitemap|mapa_do_site')
+	);
 
 	Router::connect('/robots.txt', array('controller' => 'pages', 'action'=> 'robotstxt'));
 	
