@@ -53,6 +53,9 @@
 					<h3>
 						Suporte
 					</h3>
+					<p class="trocarTexto">
+						O módulo suporte técnico ainda não está disponível!
+					</p>
 				</div>
 				<div class="tab-pane active" id="tab2">
 					<!--
@@ -258,13 +261,19 @@
 					<h3>
 						Gerar 2ª via de boleto
 					</h3>
+					<p class="trocarTexto">
+						O mecanismo de geração de boleto ainda não está disponível!
+					</p>
+					<p class="trocarTexto">
+						Em breve estaremos implementando, faça verificações futuras.
+					</p>
 				</div>
 
 			</div>
 		</div>
-
+		<!--
 		<span class="fa fa-fw fa-coffee"></span>
-
+		-->
 	</div>
 
 
