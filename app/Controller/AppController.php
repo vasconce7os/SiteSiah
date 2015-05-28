@@ -90,6 +90,23 @@ class AppController extends Controller
 		$pageURL .= $_SERVER["REQUEST_URI"];
 		return $pageURL;
 	}
+	public function getUrlServer()
+	{
+		$pageURL = 'http';
+		if (@$_SERVER["HTTPS"] == "on")
+		{
+			$pageURL .= "s";
+		}
+		$pageURL .= "://";
+		if ($_SERVER["SERVER_PORT"] != "80")
+		{
+			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+		} else
+		{
+			$pageURL .= $_SERVER["SERVER_NAME"];
+		}
+		return $pageURL;
+	}
 	
 	public function setMetaTags($tags = array())
 	{
