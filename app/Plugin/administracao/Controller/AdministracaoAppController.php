@@ -8,6 +8,12 @@ class AdministracaoAppController extends AppController
 	public $logged;
 	var $sessionAdmin;
 	public $components = array("Administracao.Session");
+
+	var $infoMsgClass = 'msgInfo';
+	var $attentionMsgClass = 'msgAtencao';
+	var $errorMsgClass = 'msgErro';
+	var $successMsgClass = 'msgSucesso';
+
 	public function beforeFilter()
 	{
 		parent::beforeFilter();
@@ -114,14 +120,21 @@ class AdministracaoAppController extends AppController
 						'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/image.svg',
 	
 				)
-				,
-				"newsletters"=> array
+				,*/
+				"clientes"=> array
 				(
-						'label'=> "Newsletters",
-						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/newslatters',
-						'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/email.svg',
-	 
-				), */
+						'label'=> "Clientes",
+						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/clientes',
+						//'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/email.svg',
+	 					'child'=> array
+						(
+								'inserir'=> array
+								(
+										'label'=> "Inserir",
+										'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/clientes' . '/inserir',
+								)
+						),
+				),
 				"contatos"=> array
 				(
 						'label'=> "Contatos",

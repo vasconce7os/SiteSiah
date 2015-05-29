@@ -836,3 +836,7 @@ header#topo > div > label
 	width: 250px;
 	text-align: center;
 }
+.text span
+{
+	font-weight: bold;
+}

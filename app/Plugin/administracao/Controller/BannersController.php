@@ -232,6 +232,6 @@ class BannersController  extends AdministracaoAppController
 	public function beforeFilter()
 	{
 		parent::beforeFilter();
-		$this-> layout = 'Administracao.adminSomavirtual';
+		//$this-> layout = 'Administracao.defaultAdm';
 	}
 }
