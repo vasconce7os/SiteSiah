@@ -218,7 +218,6 @@ fieldset {
 legend {
 	margin: 0 10px;
 	text-align: center;
-	text-transform: uppercase;
 	color: #3A3C39;
 	font-size: 1.125rem;
 }
@@ -249,9 +248,7 @@ form table tr:last-child td {
 	border-radius: 8px;
 	cursor: pointer;
 }
-[type=submit]:hover, [type=button]:hover {
-	background: #666;
-}
+
 [type=text], [type=email],
 [type=tel], [type=password] {
 	border: 1px solid #DDD;
@@ -355,7 +352,6 @@ a.botao {
 	color: #FFF;
 	font-weight: 400;
 	text-decoration: none;
-	text-transform: lowercase;
 	line-height: 24px;
 }
 a.botao img {
@@ -364,9 +360,11 @@ a.botao img {
 	vertical-align: middle;
 	margin-bottom: 2px;
 }
-a.botao:hover {
+a.botao:hover, [type=submit]:hover, [type=button]:hover
+{
 	background: #7BC143;
 }
+
 /************************
 		navegação
 *************************/
