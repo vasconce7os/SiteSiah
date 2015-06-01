@@ -44,3 +44,4 @@ Temporary Items
 app/Config/database.php
 app/tmp/*
 */error.log
+app/img/clientes/tests/*
