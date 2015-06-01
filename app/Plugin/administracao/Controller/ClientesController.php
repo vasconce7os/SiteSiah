@@ -130,14 +130,132 @@ class ClientesController extends AdministracaoAppController
 		if(!$cliente)
 		{
 			$this-> Session-> setFlashErro("Cliente não encontrado!");
-			//$this-> redirect(array('action'=> 'index'));
+			$this-> redirect(array('action'=> 'index'));
 		} else
 		{
 
 		}
+
+		if($this-> request-> is('post') || $this-> request-> is('put'))
+		{
+			try 
+	        {
+	        	$arrayErros = null;
+	        	//pr($this-> request-> data);
+	        	$dadosParaDb['fantasia'] = $this-> request-> data['Cliente']['fantasia'];
+	        	$dadosParaDb['cnpj'] = $this-> request-> data['Cliente']['cnpj'];
+	        	$dadosParaDb['id'] = $this-> request-> data['Cliente']['id'];
+	        	$dadosParaDb['naoativado'] = $this-> request-> data['Cliente']['naoativado'];
+	        	$dadosParaDb['email'] = $this-> request-> data['Cliente']['email'];
+	        	$dadosParaDb['admin_id'] = $this-> sessionAdmin[0]['Admin']['id'];
+	        	//pr($dadosParaDb);
+	        	//exit;
+	        	if($this-> request-> data['Cliente']['alterarImg'] == 1)
+	        	{
+			        $extencoes = array ('image/jpeg', 'image/png');
+		            $dimensoes['larguraExata'] = 375;
+		            $dimensoes['alturaExata'] = 360;
+
+		            $data = $this-> request->data;
+		            $img = $data['Cliente']['url_logo'];
+		            $imgRetorno = $this -> Images-> checaArquivoDimensaoExata($extencoes, $dimensoes, $img);
+		            if($imgRetorno['OK'] == FALSE)
+	                {
+	                	$errosNivel2 = null;
+	                	$arrayErrosImg = $imgRetorno;
+	                	unset($arrayErrosImg['OK']);
+	                	foreach ($arrayErrosImg as $k => $v)
+	                	{
+	                        $errosNivel2 .= "\n\t<li>".$v."</li>";
+	                    }
+	                    $errosNivel2 ="\n<ul>".$errosNivel2."\n</ul>\n";
+	                    $arrayErros[] = "Houve um erro com a imagem, certifique-se de que o arquivo que enviou obedece os padrões do sistema!".$errosNivel2;
+	                } else // arquivo obedece os parametros do sistema
+	                {
+	                    $imgNome = 'alt_' .strtolower($data['Cliente']['fantasia']) .'_'. $this-> Cliente-> id. '_' .$this-> sessionAdmin[0]['Admin']['id'];
+		                if($_SERVER["SERVER_NAME"] == 'localhost')
+				        {
+				            $imgDiretorio = 'img/clientes/tests/';
+				            if(!is_dir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS))
+							{
+								try {
+									mkdir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS);
+								} catch(ErrorException $ex) {
+									//echo "Error: " . $ex->getMessage();
+									$arrayErros[] = $ex->getMessage();
+								}
+							}
+				        } else
+				        {
+				        	$imgDiretorio = 'img/clientes/';
+
+				            $imgDiretorio = 'img' . DS . 'clientes' . DS;
+				            if(!is_dir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS))
+							{
+								try 
+								{
+									mkdir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS);
+								} catch(ErrorException $ex)
+								{
+									//echo "Error: " . $ex->getMessage();
+									$arrayErros[] = $ex->getMessage();
+								}
+							}
+				        }
+                    
+	                    $imgRetorno = $this-> Images -> salvaArqivoTemp($imgNome, $extencoes, $imgDiretorio, $img);
+	                    if($imgRetorno['OK'] == FALSE)
+	                    {
+	                    	$arrayErros[] = 'O sistema não pede explicar o motivo pelo qual não foi possivel salvar esta imagem, por favor contate adm do sistema!';
+	                    } else // atualizar caminho no db
+	                    {
+	                        $dadosParaDb['url_logo'] = @$imgRetorno['caminho'];
+	                        //$dadosParaDb['alt'] = $data['Cliente']['alt'];
+	                    }
+	                }
+	        	}
+	            if(!is_array($arrayErros))
+	            {
+	            	//pr($dadosParaDb);
+	            	//pr($imgRetorno);
+	            	//exit;
+                    $retDB = $this-> Cliente-> save($dadosParaDb);
+	            	if($retDB)
+                    {
+                        $this-> Session->setFlash("Cliente alterado com sucesso"
+                            , 'default'
+                            , array('class' => 'msgSucesso')); //msgSucesso, msgAtencao, msgErro
+                        $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'ver', $id));
+                    } else
+                    {
+                        $this-> Session->setFlash("Erro ao inserir no banco de dados!"
+                            , 'default'
+                            , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro                        
+                    }
+	            } else
+	            {
+                    $msgErros = null;
+                    foreach ($arrayErros as $k => $v)
+                    {
+                        //print_r($v);
+                        $msgErros .= "\n\t<li>".$v."</li>";
+                    }
+                    $msgErros ="\n<ul>".$msgErros."\n</ul>\n";
+                    $this-> Session->setFlash($msgErros
+                        , 'default'
+                        , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro
+	            }
+	        } catch (Exception $exc) 
+	        {
+	            echo $exc->getTraceAsString();
+	        }
+		}
+
 		$this-> request-> data = $cliente;
 		$this-> set('cliente', $cliente);
 		$this-> set('title_for_layout', "Editar " . $cliente['Cliente']['fantasia']);
+
+
 	}
 
 	public function beforeFilter()

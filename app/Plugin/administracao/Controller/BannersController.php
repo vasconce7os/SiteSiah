@@ -41,9 +41,6 @@ class BannersController  extends AdministracaoAppController
                     $this-> Session->setFlash("Houve um erro com a imagem, certifique-se de que o arquivo que enviou está nos padrões do sistema!".$errosNivel2
                         , 'default'
                         , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro
-                    //var_dump($ImgGrandeRetorno);
-                    //echo "<br />";
-                    //pr($arrayErrosImg);
                 } else 
                 {
                     //print_r($this-> request->data);
@@ -62,11 +59,6 @@ class BannersController  extends AdministracaoAppController
                         $dadosParaDb['link'] = $data['Banner']['link'];
                         $dadosParaDb['admin_id'] = $this-> sessionAdmin[0]['Admin']['id'];
                         $dadosParaDb['status'] = true;
-                        //pr($dadosParaDb);
-                        //$nomeP = Inflector::slug($dadosParaDb['url']);
-                        //var_dump($nomeP);
-                        
-                        //exit;
                         $retDB = $this-> Banner-> save($dadosParaDb);
                         if($retDB)
                         {
@@ -190,17 +182,14 @@ class BannersController  extends AdministracaoAppController
 		$id = (int) $id;
 	    if($this->request->is('post'))
     	{
-			//$dadosParaDB = $this-> request->data;
 	     	$arrayErros = null;
 	        $dadosParaDB['Banner']['id'] = $id;
 	        $dadosParaDB['Banner']['status'] = false;
 	        if(is_array($arrayErros))
 	        {
-	            //echo "<br />\$arrayErros ï¿½ array ";
 	            $msgErros = null;
 	            foreach ($arrayErros as $k => $v)
 	            {
-	                //print_r($v);
 	                $msgErros .= "\n\t<li>".$v."</li>";
 	            }
 	            $msgErros ="\n<ul>".$msgErros."\n</ul>\n";
