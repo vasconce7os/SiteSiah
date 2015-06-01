@@ -10,10 +10,10 @@ foreach ($data as $key => $menu1)
 		$class = null;
 		if (isset($menu1['child']))
 		{
-			$class = ' class="hasSub"';
+			$class = 'hasSub';
 		}
 		?>
-		<a href="<?php echo($this-> request-> bases . $menu1['url']); ?>"<?php echo ($class); ?> >
+		<a href="<?php echo($this-> request-> bases . $menu1['url']); ?>" class="<?php echo ($class); ?>" >
 			<?php 
 			echo($menu1['label'])
 			?>
