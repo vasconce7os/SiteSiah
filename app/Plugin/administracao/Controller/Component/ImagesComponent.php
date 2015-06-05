@@ -33,28 +33,25 @@ class ImagesComponent extends Component {
 		}
 		if ($naoEncontrouErro) {
 			$retorno ['OK'] = $naoEncontrouErro;
-		} else {
+		} else 
+		{
 			$retorno = $arrayErro;
 			$retorno ['OK'] = $naoEncontrouErro;
 		}
 		return $retorno;
 	}
-	public function salvaArqivoTemp($nomeP, $extencoesP, $diretorioP, $arquivoTemp) {
+	public function salvaArqivoTemp($nomeP, $extencoesP, $diretorioP, $arquivoTemp) 
+	{
+		$this-> log("\n\n\n\n\nComeçando mrthod salvaArqivoTemp()\n\n\n\n");
 		$extensao = ($arquivoTemp ['type']);
 		$extensao = explode ( '/', $extensao );
 		$extensao = $extensao [1];
 		$nomeP = Inflector::slug ( utf8_encode ( $nomeP ) );
-		/*
-		 * $nomeP = utf8_decode($nomeP); setlocale(LC_ALL, 'en_US.UTF8'); $nomeP = iconv('iso-8859-1', 'ASCII//TRANSLIT', $nomeP); $nomeP = str_replace('/ ', '-', $nomeP); $nomeP = str_replace('\ ', '-', $nomeP); $nomeP = str_replace('/', '-', $nomeP); $nomeP = str_replace("\\", '-', $nomeP); $nomeP = str_replace(' ', '-', $nomeP); $nomeP = str_replace('.', '', $nomeP);
-		 */
-		
 		$code = $nomeP . '.' . $extensao;
 		$uploadFile = $diretorioP . $code;
-		// echo'<br />nome... '.$code."<br />temp "."<br />url: ".$uploadFile;
-		// echo'<br />arquivo: <strong>'.$arquivoTemp['imagemGrande']['tmp_name'].'</strong>';
-		// echo'<br />arquivo: <strong>'.$uploadFile.'</strong>';
-		// exit;
-		if (move_uploaded_file ( $arquivoTemp ['tmp_name'], $uploadFile )) {
+		$this-> log("\nclass: ImagesComponent, \nfunction: salvaArqivoTemp, \nuploadFile: " . $uploadFile . "\n");
+		//exit;
+		if (move_uploaded_file($arquivoTemp ['tmp_name'], $uploadFile)) {
 			$info = 'Imagem alterada';
 			$retorno ['OK'] = true;
 			$retorno ['caminho'] = $diretorioP . $code;
@@ -63,7 +60,6 @@ class ImagesComponent extends Component {
 			return $retorno;
 		} else {
 			$info = 'Ocorreu um erro ao enviar imagem!';
-			// echo"<script>window.alert('nao alt');</script>";
 			$retorno ['OK'] = false;
 			return $retorno;
 		}

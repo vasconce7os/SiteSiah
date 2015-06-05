@@ -66,7 +66,7 @@ class ClientesController extends AdministracaoAppController
                     $imgRetorno = $this-> Images ->  salvaArqivoTemp($imgNome, $extencoes, $imgDiretorio, $img);
                     if($imgRetorno['OK'] == FALSE)
                     {
-                        $this-> Session->setFlash("O sistema não pede explicar o motivo pelo qual não foi possivel salvar esta imagem!"
+                        $this-> Session->setFlash("O sistema não pede explicar o motivo pelo qual não foi possível salvar esta imagem!"
                             , 'default'
                             , array('class' => $this-> errorMsgClass)); //msgSucesso, msgAtencao, msgErro                        
                     } else // atualizar caminho no db
@@ -173,23 +173,45 @@ class ClientesController extends AdministracaoAppController
 	                } else // arquivo obedece os parametros do sistema
 	                {
 	                    $imgNome = 'alt_' .strtolower($data['Cliente']['fantasia']) .'_'. $this-> Cliente-> id. '_' .$this-> sessionAdmin[0]['Admin']['id'];
+		                
+
+	                    /*Função fopen usada para abrir arquivo, ou seja, joga-lo na memória do servidor, neste caso o arquivo ainda não existe.
+						o "w" quer dizer write, que o arquivo pode ser escrito */
+
+						//$arquivo = fopen("arquivo_criado_por_php.txt", "w");
+
+						//$texto = "Olá Mundo! " . time();
+
+						/*a função fwrite escreve o valor da variável $texto no arquivo.txt se o arquivo não existe o php cria o arquivo*/
+						//$fwrite = fwrite($arquivo, $texto);
+						
+						//Debugger::dump($fwrite);
+
+						/*a função fclose retira o arquivo.txt da memória o servidor*/
+						//$fclose = fclose($arquivo);
+						//var_dump($fclose);
+
+	                    //exit;
+
+
 		                if($_SERVER["SERVER_NAME"] == 'localhost')
 				        {
-				            $imgDiretorio = 'img/clientes/tests/';
-				            if(!is_dir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS))
+				            $imgDiretorio = '/img/clientes/tests/';
+				            if(!is_dir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests2" . DS))
 							{
-								try {
-									mkdir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS);
-								} catch(ErrorException $ex) {
+								try
+								{
+									mkdir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests2" . DS);
+								} catch(ErrorException $ex)
+								{
 									//echo "Error: " . $ex->getMessage();
 									$arrayErros[] = $ex->getMessage();
 								}
 							}
 				        } else
 				        {
-				        	$imgDiretorio = 'img/clientes/';
-
 				            $imgDiretorio = 'img' . DS . 'clientes' . DS;
+				            //$imgDiretorio = './';
 				            if(!is_dir(WWW_ROOT . DS ."img" . DS . "clientes" . DS . "tests" . DS))
 							{
 								try 
@@ -202,11 +224,13 @@ class ClientesController extends AdministracaoAppController
 								}
 							}
 				        }
-                    
+                    	
 	                    $imgRetorno = $this-> Images -> salvaArqivoTemp($imgNome, $extencoes, $imgDiretorio, $img);
 	                    if($imgRetorno['OK'] == FALSE)
 	                    {
-	                    	$arrayErros[] = 'O sistema não pede explicar o motivo pelo qual não foi possivel salvar esta imagem, por favor contate adm do sistema!';
+	                    	$this-> log("imgRetorno: ");
+							$this-> log("imgRetorno: " . print_r($imgRetorno, 1));
+	                    	$arrayErros[] = 'O sistema não pede explicar o motivo pelo qual não foi possível salvar esta imagem, por favor contate adm do sistema!';
 	                    } else // atualizar caminho no db
 	                    {
 	                        $dadosParaDb['url_logo'] = @$imgRetorno['caminho'];
