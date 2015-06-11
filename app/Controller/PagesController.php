@@ -118,4 +118,16 @@ class PagesController extends AppController {
 		$meta['url'] = $this-> getUrlServer() . $this-> request-> base . '/sitemap';
 		$this-> setMetaTags($meta);
 	}
+	public function sessiont()
+	{
+		pr($this-> Session-> read());
+		pr('lol');
+		exit;
+	}
+	
+	public function beforeFilter()
+	{
+		parent::beforeFilter();
+		$this->Auth->allow();
+	}
 }

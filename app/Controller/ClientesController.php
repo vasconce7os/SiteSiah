@@ -198,12 +198,14 @@ class ClientesController extends AppController
 		//pr($pageURL);
 		return $pageURL;
 	}
-	/*
+	
 	function beforeFilter()
 	{
 		parent::beforeFilter();
+
+		$this->Auth->allow();
 		//$this-> cssExtra[] = array('file'=> 'css/font-awesome.min', 'comment'=> "icones no formato de font", 'shortPath'=> true, 'media'=> "all");
 		//$this-> set('cssExtra', $this-> cssExtra);
 	}
-	*/
+	
 }
