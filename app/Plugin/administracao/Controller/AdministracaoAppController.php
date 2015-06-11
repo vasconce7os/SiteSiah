@@ -112,13 +112,6 @@ class AdministracaoAppController extends AppController
 						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/banners',
 						'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/image.svg',
 	
-				),
-				"artigos"=> array
-				(
-						'label'=> "Artigos/News",
-						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/artigos',
-						'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/image.svg',
-	
 				)
 				,*/
 				"clientes"=> array
@@ -141,6 +134,13 @@ class AdministracaoAppController extends AppController
 						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/contatos',
 						//'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/orcamento.svg',
 						
+				),
+				"chamados"=> array
+				(
+						'label'=> "Chamados",
+						'url'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/chamados',
+						//'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/image.svg',
+	
 				)
 		);
 		return $dataMenu;
