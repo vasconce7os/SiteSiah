@@ -103,8 +103,9 @@
 	</header>
 	<!-- #header -->
 	<section id="main">
-
-				<?php echo $this->Session->flash(); ?>
+		<div class="container">
+			<?php echo $this->Session->flash(); ?>
+		</div>
 	
 				<?php echo $this->fetch('content'); ?>
 
@@ -116,18 +117,18 @@
 		?>
 
 		<?php
-		// echo $this->element('sql_dump');
+		echo $this->element('sql_dump');
 		?>
 
 	</footer>
-		<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/jquery.fitvids.min.js'></script>
-		<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/main.js'></script>
-		<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/bootstrap.min.js'></script>
-		<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/jquery.form.min.js'></script>
-		<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/scripts.js'></script>
-		<?php 
-	    	echo $this-> Siah-> assetsExtra(array('cssExtra' => $cssExtra, 'jsExtra'=> $jsExtra)); 
-		?>
+	<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/jquery.fitvids.min.js'></script>
+	<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/main.js'></script>
+	<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/bootstrap.min.js'></script>
+	<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/jquery.form.min.js'></script>
+	<script type='text/javascript' src='<?php echo($this-> request-> base); ?>/js/scripts.js'></script>
+	<?php 
+    	echo $this-> Siah-> assetsExtra(array('cssExtra' => $cssExtra, 'jsExtra'=> $jsExtra)); 
+	?>
 
 </body>
 </html>
