@@ -55,6 +55,9 @@
 					</h3>
 					<p class="trocarTexto">
 						O módulo suporte técnico ainda não está disponível!
+						<a href="<?php echo($this-> request-> base . '/chamados'); ?>" class="btn btn-primary">
+							Abrir um chamado
+						</a>
 					</p>
 				</div>
 				<div class="tab-pane active" id="tab2">

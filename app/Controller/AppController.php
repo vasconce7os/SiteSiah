@@ -38,6 +38,15 @@ class AppController extends Controller
 	var $infoMsgClass = 'alert alert-info';
 	var $errorMsgClass = 'alert alert-error';
 	var $successMsgClass = 'alert alert-success';
+
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'clientes', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'pages', 'action' => 'inicio')
+        )
+    );
+
 	public function beforeFilter()
 	{
 		$this-> sisCliente['nome'] = "SIAH";
@@ -67,7 +76,7 @@ class AppController extends Controller
 		{
 			$this-> layout = 'ajax';
 		}
-	
+		$this->Auth->allow(array('index', 'view', 'sessiont', 'inicio' ));
 	}
 	
 	
@@ -184,6 +193,23 @@ class AppController extends Controller
 	
 				)
 		);
+		$sessionAuth = $this-> Session-> read('Auth');
+		//pr($sessionAuth); exit;
+		if ($sessionAuth && isset($sessionAuth['User']))
+		{
+			$dataMenu['sessao'] = 
+			array
+			(
+						'label'=> "Sair",
+						'url'=> $this-> request-> base .'/users/logout',
+						//'icone'=> $this-> request-> base .'/' . $this-> request-> params['plugin'] . '/img/icn/orcamento.svg',
+	
+				
+			);
+
+		}
+		//pr($dataMenu);
+		//exit;
 		return $dataMenu;
 	}
 	/**
