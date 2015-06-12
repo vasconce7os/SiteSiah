@@ -7,17 +7,28 @@
 	</h1>
 
 	<?php
-
 	//pr($lChamados[0]);
 	?>
 
 	<p>
-		Entenda como funciona um 
-		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados" class="btn btn-primary">
-			chamado
-		</a>, se voc~e já sabe então
-		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar" class="btn btn-primary">
-			Abra um chamado
+		Um chamamdo é um pedido de ajuda via internet do cliente para a SIAH, 
+		para iniciar um chamado à equipe de suporte da SIAH 
+		é necesário o cliente efetuar 
+		<a href="<?php echo($this-> request-> base); ?>/users/login.html">
+			login no sistema 
+		</a>
+		sistema.
+	</p>
+	<p>
+		O procedimento é simples qualquer pessoa com conhecimentos básicos em informática pode iniciar um chamado.
+	</p>
+	<p class="trocarTexto">
+		Colocar imagem do fluxo!
+	</p>
+	<p>
+		Voc~e está com  problemas no A7?
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar.html" class="btn btn-primary">
+			Inicie um chamado agora!
 		</a>
 	</p>
 </div>

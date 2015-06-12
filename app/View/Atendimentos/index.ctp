@@ -59,7 +59,7 @@
 						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados">
 							chamado
 						</a>, se você já sabe então
-						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar" class="btn btn-primary">
+						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar.html" class="btn btn-primary">
 							Abra um chamado
 						</a>
 					</p>

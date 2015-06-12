@@ -14,14 +14,14 @@ class ChamadosController extends AppController
 
 	public function index()
 	{
-		$this-> set('title_for_layout', "Abrir um chamado");
+		$this-> set('title_for_layout', "Chamados ao suporte SIAH");
 		
 	}
 
 	public function criar($veio = null)
 	{
 		//echo('veio: '); pr($veio); exit;
-		if($this-> request-> is("chamado"))
+		if($this-> request-> is("post"))
 		{
 			//$this-> log("no enviar: é chamado ");
 			//$this-> log("no enviar: chamado: " . print_r($this-> data, 1));
@@ -35,7 +35,7 @@ class ChamadosController extends AppController
 			$data = $this-> request-> data;
 			$enviou = $this-> Chamado -> saveAll($chamadoForDB);
 			//var_dump($enviou);
-
+			//exit;
 			if($enviou)
 			{
 				$this-> Session->setFlash('Chamado iniciado'
@@ -44,7 +44,6 @@ class ChamadosController extends AppController
 				$this-> redirect(array("action"=> "ver", $this-> Chamado-> getLastInsertId()));
 			} else
 			{
-				
 				$this-> Session->setFlash('Houve um erro ao inserir o chamado'
 					, 'default'
 					, array('class' => $this-> errorMsgClass)); 
@@ -63,5 +62,12 @@ class ChamadosController extends AppController
 		}
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
 		$this->set('chamado', $chamado);
+	}
+
+	function beforeFilter()
+	{
+		parent::beforeFilter();
+
+		$this->Auth->allow('index');
 	}
 }

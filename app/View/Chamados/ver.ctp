@@ -14,4 +14,10 @@
 	//pr($lChamados[0]);
 	?>
 
+	<p>
+		ver todos os seus  
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/lista_por_cliente.html">
+			chamados
+		</a>
+	</p>
 </div>

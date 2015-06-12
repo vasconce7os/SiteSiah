@@ -37,8 +37,11 @@
 	echo $this->Form->end();
 	?>
 
-	<form action="<?php echo($this-> request-> base); ?>/chamados/criar" method="post">
-		
-	</form>
+	<p>
+		Saiba mais sobre 
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados.html">
+			chamados
+		</a>
+	</p>
 
 </div>
