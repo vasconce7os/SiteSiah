@@ -25,7 +25,7 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('Chamado.0.chamadomsg.msg', array());
+		echo $this-> Form-> input('Chamado.Chamadomsg.0.msg', array());
 		?>
 
         <button type="submit" class="btn btn-primary">

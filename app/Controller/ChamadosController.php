@@ -30,12 +30,15 @@ class ChamadosController extends AppController
 			$chamadoForDB['Chamado']['admin_id'] = 1; // Sistema
 			
 			//$enviou = $this-> Chamado-> save($chamadoForDB);
-			//pr($chamadoForDB); exit;
+			pr($this-> Chamado);
+			pr($chamadoForDB); 
+			exit;
 
 			$data = $this-> request-> data;
 			$enviou = $this-> Chamado -> saveAll($chamadoForDB);
-			//var_dump($enviou);
+			var_dump($enviou);
 			//exit;
+			/*
 			if($enviou)
 			{
 				$this-> Session->setFlash('Chamado iniciado'
@@ -48,6 +51,7 @@ class ChamadosController extends AppController
 					, 'default'
 					, array('class' => $this-> errorMsgClass)); 
 			}
+			*/
 		} else 
 		{
 			//request get

@@ -5,7 +5,7 @@ class Chamado extends AppModel
         'Chamadomsg' => array(
             'className' => 'Chamadomsg',
             // do exemplo //'conditions' => array('Chamadomsg.approved' => '1'),
-            'order' => 'Chamadomsg.created DESC'
+            //'order' => 'Chamadomsg.created DESC'
         )
     );
 }
