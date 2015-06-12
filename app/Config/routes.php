@@ -50,6 +50,22 @@ Router::parseExtensions('html');
 
 	Router::connect('/robots.txt', array('controller' => 'pages', 'action'=> 'robotstxt'));
 	
+
+	Router::connect('/suporte/chamados', array('controller' => 'chamados',));
+	Router::connect(
+    '/:ornamentacao/chamados/:action/*', 
+    	array(
+	    	'controller' => 'chamados',
+	    	//'action' => ':action',
+
+    	),
+    	array(
+	    	'ornamentacao' => 'suporte',
+	    	//'action' => '[a-z]+',
+
+    	)
+
+);
 	
 
 /**

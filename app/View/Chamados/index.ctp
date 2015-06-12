@@ -11,13 +11,13 @@
 	//pr($lChamados[0]);
 	?>
 
-	<form action="<?php echo($this-> request-> base); ?>/chamados/abrir" method="post">
-		
-        <button type="submit" class="btn btn-primary">
-        	Abrir chamado
-        </button>
-	</form>
-	<a href="<?php echo($this-> request-> base); ?>/chamados/criar" class="btn btn-primary">
-		Abrir chamado
-	</a>
+	<p>
+		Entenda como funciona um 
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados" class="btn btn-primary">
+			chamado
+		</a>, se voc~e já sabe então
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar" class="btn btn-primary">
+			Abra um chamado
+		</a>
+	</p>
 </div>

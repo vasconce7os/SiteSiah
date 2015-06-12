@@ -53,10 +53,14 @@
 					<h3>
 						Suporte
 					</h3>
-					<p class="trocarTexto">
-						O módulo suporte técnico ainda não está disponível!
-						<a href="<?php echo($this-> request-> base . '/chamados'); ?>" class="btn btn-primary">
-							Abrir um chamado
+
+					<p>
+						Entenda como funciona um 
+						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados">
+							chamado
+						</a>, se você já sabe então
+						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar" class="btn btn-primary">
+							Abra um chamado
 						</a>
 					</p>
 				</div>

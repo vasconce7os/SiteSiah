@@ -18,8 +18,9 @@ class ChamadosController extends AppController
 		
 	}
 
-	public function criar()
+	public function criar($veio = null)
 	{
+		//echo('veio: '); pr($veio); exit;
 		if($this-> request-> is("chamado"))
 		{
 			//$this-> log("no enviar: é chamado ");
