@@ -198,7 +198,7 @@ $(document).ready(function(){
 					</a>
 				</h3>
 				<p>
-					JCL Móveis corporativos
+					JCL Móveis Corporativos
 				</p>
 			</li>
 			<li>
