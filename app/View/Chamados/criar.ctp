@@ -17,7 +17,7 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('titulo', array('label'=> "Título"));
+		echo $this-> Form-> input('titulo', array('label'=> "TÃ­tulo"));
 		?>
 
 		<?php
@@ -25,7 +25,7 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('Chamadomsg.0.msg', array());
+		echo $this-> Form-> input('Chamado.Chamadomsg.0.msg', array());
 		?>
 
         <button type="submit" class="btn btn-primary">

@@ -133,21 +133,3 @@ h2 a
     padding-top: 20px;
 }
 
-.chamadomsg
-{
-
-    border:inset 1px #b2dbe8;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    background-color: rgba(176, 237, 230, 1); 
-    padding: 10px;
-}
-time
-{
-   font-size: 10pt;
-}
-section footer
-{
-    padding-top: 30px;
-}
