@@ -21,24 +21,35 @@ class ChamadosController extends AppController
 	public function criar($veio = null)
 	{
 		//echo('veio: '); pr($veio); exit;
+		//$this-> set('title_for_layout', " Criar novo chamado");
 		if($this-> request-> is("post"))
 		{
-			//$this-> log("no enviar: Ã© chamado ");
+			//$this-> log("no enviar: é chamado ");
 			//$this-> log("no enviar: chamado: " . print_r($this-> data, 1));
 			$chamadoForDB = $this-> data;
 			$chamadoForDB['Chamado']['user_id'] = $this-> Auth-> user('id');
 			$chamadoForDB['Chamado']['admin_id'] = 1; // Sistema
+
+
+			$chamadoForDB['Chamadomsg'][0]['user_id'] = $this-> Auth-> user('id');
 			
 			//$enviou = $this-> Chamado-> save($chamadoForDB);
-			pr($this-> Chamado);
-			pr($chamadoForDB); 
-			exit;
+
+			//echo('<h1>$this-> Chamado</h1>');
+			//pr($this-> Chamado);
+			//echo("<h1>chamadoForDB</h1>");
+			//pr($chamadoForDB); 
+			//exit;
 
 			$data = $this-> request-> data;
+			
 			$enviou = $this-> Chamado -> saveAll($chamadoForDB);
-			var_dump($enviou);
+
+			//echo("<h1>var_dump($enviou);</h1>");
+			//var_dump($enviou);
+
 			//exit;
-			/*
+			
 			if($enviou)
 			{
 				$this-> Session->setFlash('Chamado iniciado'
@@ -51,7 +62,7 @@ class ChamadosController extends AppController
 					, 'default'
 					, array('class' => $this-> errorMsgClass)); 
 			}
-			*/
+			
 		} else 
 		{
 			//request get
@@ -59,13 +70,20 @@ class ChamadosController extends AppController
 	}
 	public function ver($id = null) 
 	{
-        $chamado = $this->Chamado->findById($id);
+        $chamado = $this-> Chamado-> findById($id);
 		if (!$chamado)
 		{
-		    throw new NotFoundException('Chamado nÃ£o encontrado!');
+		    throw new NotFoundException('Chamado não encontrado!');
 		}
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
 		$this->set('chamado', $chamado);
+	}
+
+	public function lista_por_cliente()
+	{
+		$this-> set('title_for_layout', "Listando chamados de ". $this-> Auth-> user('username'));
+		$lChamados = $this-> Chamado-> findAllByUserId($this-> Auth-> user('id'));
+		$this-> set('lChamados', $lChamados);
 	}
 
 	function beforeFilter()

@@ -33,7 +33,7 @@
 			<ul class="nav nav-tabs">
 				<li>
 					<a href="#tab1 " data-toggle="tab" class="span3">
-						Suporte TÃ©cnico
+						Suporte Técnico
 					</a>
 				</li>
 				<li class="active">
@@ -43,7 +43,7 @@
 				</li>
 				<li>
 					<a href="#tab3" data-toggle="tab" class="span3">
-						2Âª via de boleto
+						2ª via de boleto
 					</a>
 				</li>
 			</ul>
@@ -58,7 +58,7 @@
 						Entenda como funciona um 
 						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados">
 							chamado
-						</a>, se vocÃª jÃ¡ sabe entÃ£o
+						</a>, se você já sabe então
 						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar.html" class="btn btn-primary">
 							Abra um chamado
 						</a>
@@ -67,7 +67,7 @@
 				<div class="tab-pane active" id="tab2">
 					<!--
 					<h3>
-						LocalizaÃ§Ã£o
+						Localização
 					</h3>
 					-->
 
@@ -81,7 +81,7 @@
 					<div class="panel panel-primary">
 					    <div class="panel-body text-center">
 				            <div class="col-md-12">
-				                <h4>LocalizaÃ§Ã£o</h4>	               
+				                <h4>Localização</h4>	               
 				            </div>
 				            <div class="col-md-12">
 				                <!-- Embedded Google Map -->
@@ -94,20 +94,19 @@
 					<div class="panel panel-primary">
 					    <div class="panel-body text-center">
 				            <div class="col-md-12">
-				                <h4>EndereÃ§o fÃ­sico</h4>	               
+				                <h4>Endereço físico</h4>	               
 				            </div>
 				            <div class="col-md-12">
 				                
 
 
-
-
-
 	                <p>
+	                	Av. Buriti, S/N, Eliza Miranda Mall, Bloco C, Sala 107, Distrito Industrial I, Manaus - Amazonas
+	                </p>
 	                
 
-						Av. Buriti, S/N, Eliza Miranda Mall, Bloco C, Sala 107, Distrito Industrial I, Manaus â€“ Amazonas
-	                </p>
+
+
 	                <p><i class="fa fa-phone"></i> 
 	                    <abbr title="Telefone">T</abbr>: (92) 3345-7707 / 99394-6101 / 98182-6512</p>
 	                <p><i class="fa fa-envelope-o"></i> 
@@ -118,7 +117,7 @@
 	                </p>
 	                <p>
 	                	<i class="fa fa-clock-o"></i> 
-	                    <abbr title="HorÃ¡rio">H</abbr>: Segunda - Sexta: 7:30 AM as 17:00 PM
+	                    <abbr title="Horário">H</abbr>: Segunda - Sexta: 7:30 AM as 17:00 PM
 	                </p>
 
 
@@ -141,13 +140,13 @@
 				           		
 	                <ul class="list-unstyled list-inline list-social-icons">
 	                    <li>
-	                        <a href="https://www.facebook.com/siahonline" title="PÃ¡gina da SIAH no Facebook" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a>
+	                        <a href="https://www.facebook.com/siahonline" title="Página da SIAH no Facebook" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a>
 	                    </li>
 	                    <li>
-	                        <a href="https://www.linkedin.com/company/siah" title="PÃ¡gina da SIAH no LinkedIn+" target="_new"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	                        <a href="https://www.linkedin.com/company/siah" title="Página da SIAH no LinkedIn+" target="_new"><i class="fa fa-linkedin-square fa-2x"></i></a>
 	                    </li>
 	                    <li>
-	                        <a href="https://www.google.com/+SiahonlineBrManaus" title="PÃ¡gina da SIAH no google+" target="_new"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	                        <a href="https://www.google.com/+SiahonlineBrManaus" title="Página da SIAH no google+" target="_new"><i class="fa fa-google-plus-square fa-2x"></i></a>
 	                    </li>
 	                </ul>
 				            </div>
@@ -162,10 +161,10 @@
 						<div class="panel-body text-center">
 				    		<div class="col-md-12">
 				    			<span>
-				    				Envie-nos uma mensagem atravÃ©s do
+				    				Envie-nos uma mensagem através do
 				    			</span>
 				        		<h3>
-				        			FormulÃ¡rio de contato SIAH
+				        			Formulário de contato SIAH
 				        		</h3>
 				    		</div>
 				    		<div class="col-md-12"> <!-- antes class="col-md-8" -->
@@ -196,9 +195,9 @@
 					                    <div class="control-group form-group">
 					                        <div class="controls">
 					                            <label for="tipo">
-					                            	EstÃ¡ mensagem se trata de:
+					                            	Está mensagem se trata de:
 					                            </label>
-					                            <select id="tipo" class="form-control" name="data[Contato][tipo]"  required data-validation-required-message="Escolha uma opÃ§Ã£o por favor.">
+					                            <select id="tipo" class="form-control" name="data[Contato][tipo]"  required data-validation-required-message="Escolha uma opção por favor.">
 													<option disabled="disabled" selected="selected">
 												  		 Selecione
 												  	</option>
@@ -206,13 +205,13 @@
 												  		 Vendas
 												  	</option>
 													<option value="critica">
-												  		 CrÃ­tica
+												  		 Crítica
 												  	</option>
 													<option value="elogio">
 												  		 Elogio
 												  	</option>
 													<option value="sugestao">
-												  		 SugestÃ£o
+												  		 Sugestão
 												  	</option>
 													<option value="outros">
 												  		 Outro
@@ -223,7 +222,7 @@
 					                    <div class="control-group form-group">
 					                        <div class="controls">
 					                            <label>Telefone:</label>
-					                            <input name="data[Contato][telefone]" placeholder="Digite seu nÃºmero de telefone" type="tel" class="form-control" id="phone" required data-validation-required-message="Digite seu nÃºmero de telefone por favor.">
+					                            <input name="data[Contato][telefone]" placeholder="Digite seu número de telefone" type="tel" class="form-control" id="phone" required data-validation-required-message="Digite seu número de telefone por favor.">
 					                        </div>
 					                    </div>
 					                    <div class="control-group form-group">
@@ -266,13 +265,13 @@
 				</div>
 				<div class="tab-pane" id="tab3">
 					<h3>
-						Gerar 2Âª via de boleto
+						Gerar 2ª via de boleto
 					</h3>
 					<p class="trocarTexto">
-						O mecanismo de geraÃ§Ã£o de boleto ainda nÃ£o estÃ¡ disponÃ­vel!
+						O mecanismo de geração de boleto ainda não está disponível!
 					</p>
 					<p class="trocarTexto">
-						Em breve estaremos implementando, faÃ§a verificaÃ§Ãµes futuras.
+						Em breve estaremos implementando, faça verificações futuras.
 					</p>
 				</div>
 
