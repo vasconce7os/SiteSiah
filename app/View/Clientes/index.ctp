@@ -39,7 +39,7 @@ $(document).ready(function(){
 					</a>
 				</h3>
 				<p>
-					A Amazonas EletroEletromecânica faz uso do A7
+					A Amazonas Eletromecânica faz uso do A7
 				</p>
 			</li>
 			<li>
@@ -94,7 +94,7 @@ $(document).ready(function(){
 					</a>
 				</h3>
 				<p>
-					O segumento de elétrica do grupo Pool
+					O segmento de elétrica do grupo Pool
 				</p>
 			</li>
 			<li>
