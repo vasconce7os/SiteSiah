@@ -19,7 +19,7 @@ $(document).ready(function(){
 	<div class="entry-content">
 
 		<h2 >
-			A7 – Sistema de gestão empresarial
+			A7 – Sistema de Gestão Empresarial
 		</h2>
 		<p>
 			O <strong><em>A7</em></strong> é um software desenvolvido na
