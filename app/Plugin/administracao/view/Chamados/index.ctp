@@ -16,7 +16,7 @@ if($lChamados)
 	<table class="tGenerica">
 
 	<?php 
-	echo $this-> Html-> tableHeaders(array('Código', 'Fantasia', 'CNPJ', 'Email'));
+	echo $this-> Html-> tableHeaders(array('Código', 'Título',));
 	?>
 
 	<?php
@@ -31,15 +31,7 @@ if($lChamados)
 							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
 						),
 					$this-> Html-> link(
-							$cliente['Chamado']['fantasia'],
-							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
-						),
-					$this-> Html-> link(
-							$cliente['Chamado']['cnpj'],
-							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
-						),
-					$this-> Html-> link(
-							$cliente['Chamado']['email'],
+							$cliente['Chamado']['titulo'],
 							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
 						),
 				)

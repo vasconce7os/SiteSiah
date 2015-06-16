@@ -47,7 +47,7 @@ class ChamadosController extends AdministracaoAppController
 		}
 		$this-> request-> data = $chamado;
 		$this-> set('chamado', $chamado);
-		$this-> set('title_for_layout', $chamado['Chamado']['assunto']);
+		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
 	}
 
 	public function responder($id = null)

@@ -17,7 +17,7 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('titulo', array('label'=> "Título"));
+		echo $this-> Form-> input('titulo', array('label'=> "TÃ­tulo"));
 		?>
 
 		<?php
