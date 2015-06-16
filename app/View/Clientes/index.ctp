@@ -15,7 +15,7 @@ $(document).ready(function(){
 			Clientes da SIAH
 		</h1>
 		<h2>
-			O portf√≥lio da SIAH est√° repleto de empresas que possuem solu√ß√µes confi√°veis e imediatas
+			O portfÛlio da SIAH est· repleto de empresas que possuem soluÁıes confi·veis e imediatas
 		</h2>
 	</header>
 	<div class="entry-content">
@@ -35,22 +35,22 @@ $(document).ready(function(){
 				<h3>
 
 					<a href="<?php echo($this-> request-> base); ?>/clientes/amazonas_eletro.html">
-						Amazonas Eletromec√¢nica
+						Amazonas Eletromec‚nica
 					</a>
 				</h3>
 				<p>
-					A Amazonas Eletromec√¢nica faz uso do A7
+					A Amazonas Eletromec‚nica faz uso do A7
 				</p>
 			</li>
 			<li>
 				<h3>
 
 					<a href="<?php echo($this-> request-> base); ?>/clientes/ferragens_sao_pedro.html">
-						Ferragens S√£o Pedro
+						Ferragens S„o Pedro
 					</a>
 				</h3>
 				<p>
-					Ferragens S√£o Pedro
+					Ferragens S„o Pedro
 				</p>
 			</li>
 			<li>
@@ -79,11 +79,11 @@ $(document).ready(function(){
 				<h3>
 
 					<a href="<?php echo($this-> request-> base); ?>/clientes/fazenda_sao_pedro.html">
-						Fazenda S√£o Pedro
+						Fazenda S„o Pedro
 					</a>
 				</h3>
 				<p>
-					Fazenda S√£o Pedro
+					Fazenda S„o Pedro
 				</p>
 			</li>
 			<li>
@@ -94,18 +94,18 @@ $(document).ready(function(){
 					</a>
 				</h3>
 				<p>
-					O segmento de el√©trica do grupo Pool
+					O segmento de elÈtrica do grupo Pool
 				</p>
 			</li>
 			<li>
 				<h3>
 
 					<a href="<?php echo($this-> request-> base); ?>/clientes/queiroz_descartaveis.html">
-						Queiroz Descart√°veis
+						Queiroz Descart·veis
 					</a>
 				</h3>
 				<p>
-					Queiroz Descart√°veis e Embalagens
+					Queiroz Descart·veis e Embalagens
 				</p>
 			</li>
 			<li>
@@ -123,11 +123,11 @@ $(document).ready(function(){
 				<h3>
 
 					<a href="<?php echo($this-> request-> base); ?>/clientes/svi_instalacoes.html">
-						SV Instala√ß√µes
+						SV InstalaÁıes
 					</a>
 				</h3>
 				<p>
-					SV Instala√ß√µes
+					SV InstalaÁıes
 				</p>
 			</li>
 			<li>
@@ -174,41 +174,41 @@ $(document).ready(function(){
 			<li>
 				<h3>
 					<a href="<?php echo($this-> request-> base); ?>/clientes/forca_construtiva.html">
-						For√ßa Construtiva	
+						ForÁa Construtiva	
 					</a>
 				</h3>
 				<p>
-					Nossa uni√£o √© sua economia
+					Nossa uni„o È sua economia
 				</p>
 			</li>
 			<li>
 				<h3>
 					<a href="<?php echo($this-> request-> base); ?>/clientes/inox_pro.html">
-						Inox Pr√≥	
+						Inox PrÛ	
 					</a>
 				</h3>
 				<p>
-					Inox Pr√≥
+					Inox PrÛ
 				</p>
 			</li>
 			<li>
 				<h3>
 					<a href="<?php echo($this-> request-> base); ?>/clientes/jcl_moveis.html">
-						JCL M√≥veis
+						JCL MÛveis
 					</a>
 				</h3>
 				<p>
-					JCL M√≥veis Corporativos
+					JCL MÛveis Corporativos
 				</p>
 			</li>
 			<li>
 				<h3>
-					<a href="<?php echo($this-> request-> base); ?>/clientes/.html">
-						Marina Tau√°
+					<a href="<?php echo($this-> request-> base); ?>/clientes/marina_taua.html">
+						Marina Tau·
 					</a>
 				</h3>
 				<p>
-					N√°utica Marina Tau√°
+					N·utica Marina Tau·
 				</p>
 			</li>
 		</ul>

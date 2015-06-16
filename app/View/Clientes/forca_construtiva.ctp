@@ -13,17 +13,17 @@ $(document).ready(function(){
 	<header class="entry-header">
 
 		<h1>
-			ForÃ§a Contrutiva
+			Força Contrutiva
 		</h1>
 	</header>
 	<div class="entry-content">
 		<p>
-			A ForÃ§a Construtiva Ã© a uniÃ£o de dez lojas tradicionais de Material de ConstruÃ§Ã£o de Manaus. Elas, cada uma localizada em um bairro estratÃ©gico da cidade, assumiram mesma identidade.
+			A Força Construtiva é a união de dez lojas tradicionais de Material de Construção de Manaus. Elas, cada uma localizada em um bairro estratégico da cidade, assumiram mesma identidade.
 		</p>
 		<p>
 			Veja mais sobre a  
 			<a href="http://www.fconstrutiva.com.br" target="_new">
-				ForÃ§a construtiva
+				Força construtiva
 			</a>
 		</p>
 	</div>
@@ -31,7 +31,7 @@ $(document).ready(function(){
 		<p>
 			<a href="<?php echo($this-> request-> base); ?>/clientes" title="portfolio SIAH">
 				<span class="fa fa-fw fa-arrow-left"></span>
-				Veja tambÃ©m outros clientes da SIAH
+				Veja também outros clientes da SIAH
 			</a>
 		</p>
 	</div>
