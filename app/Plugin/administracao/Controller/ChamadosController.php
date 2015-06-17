@@ -61,12 +61,11 @@ class ChamadosController extends AdministracaoAppController
 		}
 		if($this-> request-> is("post"))
 		{
-			//pr($this -> request-> data);
 			$this->autoRender = false;
 			$view = new View($this, false);
 			$view->set('chamadoInBrowser', $this-> request-> data);
 			$view->set('chamadoInDB', $chamado);
-			$resposta = $view->render('email_resposta', 'ajax');
+			$resposta = $view-> render('email_resposta', 'ajax');
 			//echo($resposta);
 			//exit;
 			$chamadoForDB['Chamado']['id'] = $this-> Chamado-> id;
@@ -76,14 +75,6 @@ class ChamadosController extends AdministracaoAppController
 			$salvou = $this-> Chamado-> save($chamadoForDB);
 			$this-> log('salvou a marcação do email no banco: ');
 			$this-> log($salvou);
-
-			$this-> log('vai enviar o email');
-			$retEmailCliente = $this-> enviaEmail($chamado['Chamado']['email'], "Re: " . $chamado['Chamado']['assunto'], $resposta, $this-> sisCliente['nome']);
-			//print_r($retEmailCliente, false);
-			$this-> log('ja deve ter enviado o email');
-			$this-> log('confira o log do conteúdo enviado via email');
-			$this-> log($retEmailCliente);
-			$this-> log('encerrou o log do conteúdo o log do conteúdo');
 			//exit;
 			$this-> Session-> setFlashSucesso( "Chamado de cliente respondido");
 			$this-> redirect(array("plugin"=> "administracao", 'controller' => 'chamados', 'action' => 'ver', $this-> Chamado-> id));
@@ -91,7 +82,7 @@ class ChamadosController extends AdministracaoAppController
 		$this-> jsExtra[] = array('file'=> $this-> request-> base . '/administracao/ckeditor/ckeditor.js', 'comment'=> "CKEditor para edição de texto rico", 'shortPath' => false);
 		//$this-> jsExtra[] = array('file'=> $this-> request-> base . '/administracao/js/functionsArtigo.js', 'comment'=> "Por enquanto chama o CKEditor e o contacaracters", 'shortPath' => false);
 		$this-> set('jsExtra', $this-> jsExtra);
-		$this-> set('title_for_layout', "Responder: " . $chamado['Chamado']['assunto']);
+		$this-> set('title_for_layout', "Responder: " . $chamado['Chamado']['titulo']);
 		$this-> request-> data = $this-> Chamado-> data;
 	}
 }
