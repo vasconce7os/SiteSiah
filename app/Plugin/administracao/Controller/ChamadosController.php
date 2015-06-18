@@ -61,22 +61,25 @@ class ChamadosController extends AdministracaoAppController
 		}
 		if($this-> request-> is("post"))
 		{
-			$this->autoRender = false;
-			$view = new View($this, false);
-			$view->set('chamadoInBrowser', $this-> request-> data);
-			$view->set('chamadoInDB', $chamado);
-			$resposta = $view-> render('email_resposta', 'ajax');
-			//echo($resposta);
+			//pr($chamado);
+			//pr($this-> request-> data);
 			//exit;
 			$chamadoForDB['Chamado']['id'] = $this-> Chamado-> id;
-			$chamadoForDB['Chamado']['admin_id'] = $this-> logged-> Admin-> id;
-			$chamadoForDB['Chamado']['status'] = 'respondido';
-			$chamadoForDB['Chamado']['resposta'] = $resposta;
-			$salvou = $this-> Chamado-> save($chamadoForDB);
+			//$chamadoForDB['Chamado']['admin_id'] = $this-> logged-> Admin-> id; // ja foi setado no iniciodo chamado
+			if($chamado['Chamado']['status'] = 'aguardando análise inicial')
+			{
+				$chamadoForDB['Chamado']['status'] = 'aguardando cliente';
+			}
+
+			$chamadoForDB['Chamadomsg'][0]['user_id'] = $this-> logged-> User-> id;
+			$chamadoForDB['Chamadomsg'][0]['msg'] = $this-> request-> data['Chamadomsg'][0]['msg'];
+			//pr($chamadoForDB);
+			//exit;
+			$salvou = $this-> Chamado-> saveAll($chamadoForDB);
 			$this-> log('salvou a marcação do email no banco: ');
 			$this-> log($salvou);
 			//exit;
-			$this-> Session-> setFlashSucesso( "Chamado de cliente respondido");
+			$this-> Session-> setFlashSucesso( "Você postou uma resposta no chamado");
 			$this-> redirect(array("plugin"=> "administracao", 'controller' => 'chamados', 'action' => 'ver', $this-> Chamado-> id));
 		}
 		$this-> jsExtra[] = array('file'=> $this-> request-> base . '/administracao/ckeditor/ckeditor.js', 'comment'=> "CKEditor para edição de texto rico", 'shortPath' => false);
