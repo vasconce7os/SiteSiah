@@ -8,7 +8,7 @@
 
 	<?php
 	//pr($lChamados[0]);
-
+	pr($this->Session->read('Auth.User'));
 	if($lChamados)
 	{
 		?>
@@ -16,7 +16,7 @@
 		<table class="tGenerica"  border=1>
 
 		<?php 
-		echo $this-> Html-> tableHeaders(array('CÛdigo', 'Assunto', 'Status', 'Enviado em'));
+		echo $this-> Html-> tableHeaders(array('C?digo', 'Assunto', 'Status', 'Enviado em'));
 		?>
 
 
@@ -57,7 +57,7 @@
 	{
 		?>
 
-		N„o h· chamados!
+		N√£o h√° chamados!
 
 		<?php
 	}
@@ -65,7 +65,7 @@
 
 
 	<p>
-		deseja 
+		Deseja 
 		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar.html">
 			criar novo chamado
 		</a>
