@@ -73,7 +73,13 @@ class UsersController extends AppController
 	    if ($this->Auth->login()) {
 	        $this->redirect($this->Auth->redirect());
 	    } else {
-	        $this->Session->setFlash(__('Senha ou usuário inválidos, tente novamente'));
+            //Este if é gambiarra
+	        if ($this-> request-> is('post'))
+            {
+                $this-> Session->setFlash('Senha ou usuário inválidos, tente novamente'
+                    , 'default'
+                    , array('class' => $this-> errorMsgClass)); 
+            }
 	    }
 	}
 
