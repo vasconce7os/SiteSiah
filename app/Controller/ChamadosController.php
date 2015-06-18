@@ -9,7 +9,7 @@ class ChamadosController extends AppController
 {
 
 	//public $uses = array();
-	var $scaffold;
+	//var $scaffold;
 	var $components = array("Email");
 
 	public function index()
@@ -24,7 +24,7 @@ class ChamadosController extends AppController
 		//$this-> set('title_for_layout', " Criar novo chamado");
 		if($this-> request-> is("post"))
 		{
-			//$this-> log("no enviar: é chamado ");
+			//$this-> log("no enviar: ? chamado ");
 			//$this-> log("no enviar: chamado: " . print_r($this-> data, 1));
 			$chamadoForDB = $this-> data;
 			$chamadoForDB['Chamado']['user_id'] = $this-> Auth-> user('id');
@@ -73,7 +73,7 @@ class ChamadosController extends AppController
         $chamado = $this-> Chamado-> findById($id);
 		if (!$chamado)
 		{
-		    throw new NotFoundException('Chamado não encontrado!');
+		    throw new NotFoundException('Chamado nÃ£o encontrado!');
 		}
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
 		$this->set('chamado', $chamado);

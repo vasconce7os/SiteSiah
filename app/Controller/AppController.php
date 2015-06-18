@@ -32,7 +32,7 @@ class AppController extends Controller
 {
 	var $extPages = '.html';
 	var $meta; // matatag do html
-	var $sisCliente; // informações do cliente da Siah
+	var $sisCliente; // informaÃ§Ãµes do cliente da Siah
 	var $cssExtra = array();
 	var $jsExtra = array();
 	var $infoMsgClass = 'alert alert-info';
@@ -56,15 +56,15 @@ class AppController extends Controller
 		$this-> set('sisCliente', $this-> sisCliente);
 	
 		//metas
-		$meta['description'] = "A SIAH é uma empresa de software que trabalha no ramo de automação em gestão empresarial";
+		$meta['description'] = "A SIAH Ã© uma empresa de software que trabalha no ramo de automaÃ§Ã£o em gestÃ£o empresarial";
 		$meta['keywords'] =    "SIAH, Siah online, empresa SIAH, A7";
-		$meta['abstract'] =    "A SIAH soluções inteligentes é uma empresa de software que está localizada no Distrito industrial de Manaus e trabalha no ramo: automação em gestão empresarial";
+		$meta['abstract'] =    "A SIAH soluÃ§Ãµes inteligentes Ã© uma empresa de software que estÃ¡ localizada no Distrito industrial de Manaus e trabalha no ramo: automaÃ§Ã£o em gestÃ£o empresarial";
 		$meta['robots'] = "follow, index";
 		$meta['url'] = $this-> curPageURL();
 		$meta['imgSocial'] = FULL_BASE_URL.$this-> request-> base."/img/imagem_social_siah.jpg";
 		$this-> meta = $meta;
 		$this-> set('meta', $this-> meta);
-		$this-> set('title_for_layout', "SIAH Soluções Inteligentes");
+		$this-> set('title_for_layout', "SIAH SoluÃ§Ãµes Inteligentes");
 		$this-> set('dataMenu', $this-> generateMenu());
 		
 		$cssExtra = array();
@@ -216,7 +216,7 @@ class AppController extends Controller
      *
      * @param string $to
      * @param string $subject
-     * @param string $msg conteúdo do email
+     * @param string $msg conteÃºdo do email
      * @param string $name
      * @return Ambigous <boolean, multitype:>
      */
@@ -243,7 +243,7 @@ class AppController extends Controller
             $this->Email-> subject = $this-> treatCharset($subject);
             $this->Email-> replyTo = $this-> treatCharset($from);
             $this->Email-> from = $this-> treatCharset($name . "<" . $from .">");
-            $this->Email-> textMessage = "Aqui é textMessage. ";
+            $this->Email-> textMessage = "Aqui Ã© textMessage. ";
             //$this->Email->
             $retEmail = ($this->Email->send($this-> treatCharset($msg)));
             //$this-> log(print_r("\nretEmail: " , 1));
@@ -262,9 +262,8 @@ class AppController extends Controller
             return utf8_decode($string);
         } else
         {
-        	//$this->log('Não alterou charset');
+        	//$this->log('NÃ£o alterou charset');
             return $string;
         }
     }
 }
-// Agora esst troço deve estar no Controller com maiúsculo

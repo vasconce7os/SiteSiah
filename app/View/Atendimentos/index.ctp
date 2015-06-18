@@ -33,7 +33,7 @@
 			<ul class="nav nav-tabs">
 				<li>
 					<a href="#tab1 " data-toggle="tab" class="span3">
-						Suporte Técnico
+						Suporte TÃ©cnico
 					</a>
 				</li>
 				<li class="active">
@@ -43,7 +43,7 @@
 				</li>
 				<li>
 					<a href="#tab3" data-toggle="tab" class="span3">
-						2ª via de boleto
+						2Âª via de boleto
 					</a>
 				</li>
 			</ul>
@@ -58,7 +58,7 @@
 						Entenda como funciona um 
 						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados">
 							chamado
-						</a>, se você já sabe então
+						</a>, se vocÃª jÃ¡ sabe entÃ£o
 						<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/criar.html" class="btn btn-primary">
 							Abra um chamado
 						</a>
@@ -67,7 +67,7 @@
 				<div class="tab-pane active" id="tab2">
 					<!--
 					<h3>
-						Localização
+						Localiza??o
 					</h3>
 					-->
 
@@ -81,7 +81,7 @@
 					<div class="panel panel-primary">
 					    <div class="panel-body text-center">
 				            <div class="col-md-12">
-				                <h4>Localização</h4>	               
+				                <h4>LocalizaÃ§Ã£o</h4>	               
 				            </div>
 				            <div class="col-md-12">
 				                <!-- Embedded Google Map -->
@@ -94,7 +94,7 @@
 					<div class="panel panel-primary">
 					    <div class="panel-body text-center">
 				            <div class="col-md-12">
-				                <h4>Endereço físico</h4>	               
+				                <h4>EndereÃ§o FÃ­sico</h4>	               
 				            </div>
 				            <div class="col-md-12">
 				                
@@ -117,7 +117,7 @@
 	                </p>
 	                <p>
 	                	<i class="fa fa-clock-o"></i> 
-	                    <abbr title="Horário">H</abbr>: Segunda - Sexta: 7:30 AM as 17:00 PM
+	                    <abbr title="Hor?rio">H</abbr>: Segunda - Sexta: 7:30 AM as 17:00 PM
 	                </p>
 
 
@@ -140,13 +140,13 @@
 				           		
 	                <ul class="list-unstyled list-inline list-social-icons">
 	                    <li>
-	                        <a href="https://www.facebook.com/siahonline" title="Página da SIAH no Facebook" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a>
+	                        <a href="https://www.facebook.com/siahonline" title="P?gina da SIAH no Facebook" target="_new"><i class="fa fa-facebook-square fa-2x"></i></a>
 	                    </li>
 	                    <li>
-	                        <a href="https://www.linkedin.com/company/siah" title="Página da SIAH no LinkedIn+" target="_new"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	                        <a href="https://www.linkedin.com/company/siah" title="P?gina da SIAH no LinkedIn+" target="_new"><i class="fa fa-linkedin-square fa-2x"></i></a>
 	                    </li>
 	                    <li>
-	                        <a href="https://www.google.com/+SiahonlineBrManaus" title="Página da SIAH no google+" target="_new"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	                        <a href="https://www.google.com/+SiahonlineBrManaus" title="P?gina da SIAH no google+" target="_new"><i class="fa fa-google-plus-square fa-2x"></i></a>
 	                    </li>
 	                </ul>
 				            </div>
@@ -161,10 +161,10 @@
 						<div class="panel-body text-center">
 				    		<div class="col-md-12">
 				    			<span>
-				    				Envie-nos uma mensagem através do
+				    				Envie-nos uma mensagem atravÃ©s do
 				    			</span>
 				        		<h3>
-				        			Formulário de contato SIAH
+				        			FormulÃ¡rio de contato SIAH
 				        		</h3>
 				    		</div>
 				    		<div class="col-md-12"> <!-- antes class="col-md-8" -->
@@ -195,9 +195,9 @@
 					                    <div class="control-group form-group">
 					                        <div class="controls">
 					                            <label for="tipo">
-					                            	Está mensagem se trata de:
+					                            	Esta mensagem se trata de:
 					                            </label>
-					                            <select id="tipo" class="form-control" name="data[Contato][tipo]"  required data-validation-required-message="Escolha uma opção por favor.">
+					                            <select id="tipo" class="form-control" name="data[Contato][tipo]"  required data-validation-required-message="Escolha uma op??o por favor.">
 													<option disabled="disabled" selected="selected">
 												  		 Selecione
 												  	</option>
@@ -205,13 +205,13 @@
 												  		 Vendas
 												  	</option>
 													<option value="critica">
-												  		 Crítica
+												  		 CrÃ­tica
 												  	</option>
 													<option value="elogio">
 												  		 Elogio
 												  	</option>
 													<option value="sugestao">
-												  		 Sugestão
+												  		 SugestÃ£o
 												  	</option>
 													<option value="outros">
 												  		 Outro
@@ -222,7 +222,7 @@
 					                    <div class="control-group form-group">
 					                        <div class="controls">
 					                            <label>Telefone:</label>
-					                            <input name="data[Contato][telefone]" placeholder="Digite seu número de telefone" type="tel" class="form-control" id="phone" required data-validation-required-message="Digite seu número de telefone por favor.">
+					                            <input name="data[Contato][telefone]" placeholder="Digite seu n?mero de telefone" type="tel" class="form-control" id="phone" required data-validation-required-message="Digite seu n?mero de telefone por favor.">
 					                        </div>
 					                    </div>
 					                    <div class="control-group form-group">
@@ -265,13 +265,13 @@
 				</div>
 				<div class="tab-pane" id="tab3">
 					<h3>
-						Gerar 2ª via de boleto
+						Gerar 2Âª via de boleto
 					</h3>
 					<p class="trocarTexto">
-						O mecanismo de geração de boleto ainda não está disponível!
+						O mecanismo de geraÃ§Ã£o de boleto ainda nÃ£o estÃ¡ disponÃ­vel!
 					</p>
 					<p class="trocarTexto">
-						Em breve estaremos implementando, faça verificações futuras.
+						Em breve estaremos implementando, faÃ§a verificaÃ§Ãµes futuras.
 					</p>
 				</div>
 
