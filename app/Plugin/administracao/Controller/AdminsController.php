@@ -7,39 +7,30 @@ class AdminsController extends AdministracaoAppController
 		$this-> set('dataMenu', array());
 		if ($this-> request-> is('post'))
 		{
-			//pr($this->request->data);
-			//$list = $this-> Admin-> find('all');
-			//pr($list);
-			//exit;
-			
 			$conditions = array('conditions' => 
 				array(
 					"BINARY (Admin.login) ="=> $this-> request-> data['Admin']['login'],
 					"BINARY (Admin.password) ="=> $this-> request-> data['Admin']['password'],
 					"Admin.status"=> true,
 				),
-				'fields'=> array("Admin.id", "Admin.login", "Admin.status")
+				'fields'=> array("Admin.id", "Admin.login", "Admin.status, User.id, User.username, User.role")
 			);
-		
 			$retDB = $this-> Admin-> find('all', $conditions);
-			//pr($retDB);
-			//exit;
-			
 			$retDB[0]['Admin']['password'] = '????';
 			if(isset($retDB[0]['Admin']['id']) && ($retDB[0]['Admin']['id'] ))
 			{
 				$this-> Session-> setFlash(
-						'Bem vindo '.$retDB[0]['Admin']['nome']
-						, 'default'
-						, array('class' => 'msgSucesso'));
-				//$this->Session->write('userLogado', $retDB);
+					'Bem vindo '.$retDB[0]['Admin']['login']
+					, 'default'
+					, array('class' => 'msgSucesso')
+					);
 				$this-> Session-> write('Admin', $retDB);
 				$this-> redirect(array("plugin"=> 'administracao', "controller"=> null, 'action'=> 'index'));
 			} else
 			{
 				$this-> Session->setFlash('Acesso negado'
-						, 'default'
-						, array('class' => 'msgErro'));
+					, 'default'
+					, array('class' => 'msgErro'));
 			}
 		} else // não existe post //get
 		{
