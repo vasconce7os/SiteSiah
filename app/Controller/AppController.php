@@ -77,6 +77,9 @@ class AppController extends Controller
 			$this-> layout = 'ajax';
 		}
 		$this->Auth->allow(array('index', 'view', 'sessiont', 'inicio' ));
+		$this->Auth->loginError = "urul";
+		$this->Auth->authError = "Para acessar esta área você deve primeiro identificar-se!";
+
 	}
 	
 	
