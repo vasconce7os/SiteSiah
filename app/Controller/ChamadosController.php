@@ -70,12 +70,25 @@ class ChamadosController extends AppController
 	}
 	public function ver($id = null) 
 	{
-        $chamado = $this-> Chamado-> findById($id);
+	    $this-> Chamado-> unbindModel(
+		    array('hasMany' => array('Chamadomsg'))
+		);
+        //$chamado = $this-> Chamado-> findById($id, array("Chamado.id", 'Chamado.status', "Chamado.titulo"));
+        $chamado = $this-> Chamado-> find('first', array
+			(
+				'conditions'=> array('Chamado.id'=> $id),
+        		'fields'=> array("Chamado.id", 'Chamado.status', "Chamado.titulo")
+        	));
 		if (!$chamado)
 		{
 		    throw new NotFoundException('Chamado não encontrado!');
 		}
+		$chamado['Chamadomsg'] = $this-> Chamado-> getMessagesChamado($id);
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
+		$this-> cssExtra[] = array('file'=> 'css/styles', 'comment'=> "style da timeline", 'shortPath'=> true, 'media'=> "all");
+		$this-> jsExtra[] = array('file'=> 'js/timeline/main', 'comment'=> "js do timeline", 'shortPath'=> true);
+		$this-> set('cssExtra', $this-> cssExtra);
+		$this-> set('jsExtra', $this-> jsExtra);
 		$this->set('chamado', $chamado);
 	}
 

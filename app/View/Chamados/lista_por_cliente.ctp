@@ -16,7 +16,7 @@
 		<table class="tGenerica"  border=1>
 
 		<?php 
-		echo $this-> Html-> tableHeaders(array('C?digo', 'Assunto', 'Status', 'Enviado em'));
+		echo $this-> Html-> tableHeaders(array('Código', 'Assunto', 'Status', 'Enviado em'));
 		?>
 
 
