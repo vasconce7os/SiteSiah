@@ -149,7 +149,7 @@ class SiahHelper extends AppHelper
         	{
         		if($arquivo['shortPath'])
         		{
-        			$href = $this-> request-> base. '/' . $arquivo['file'].'.css';
+        			$href = $this-> request-> base. '/css/' . $arquivo['file'].'.css';
         		} else
         		{
         			$href = $arquivo['file'];
