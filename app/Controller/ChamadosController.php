@@ -85,8 +85,8 @@ class ChamadosController extends AppController
 		}
 		$chamado['Chamadomsg'] = $this-> Chamado-> getMessagesChamado($id);
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
-		$this-> cssExtra[] = array('file'=> 'timeline/styles', 'comment'=> "style da timeline", 'shortPath'=> true, 'media'=> "all");
-		$this-> jsExtra[] = array('file'=> 'timeline/main', 'comment'=> "js do timeline", 'shortPath'=> true);
+		$this-> cssExtra[] = array('file'=> 'css/styles', 'comment'=> "style da timeline", 'shortPath'=> true, 'media'=> "all");
+		$this-> jsExtra[] = array('file'=> 'js/timeline/main', 'comment'=> "js do timeline", 'shortPath'=> true);
 		$this-> set('cssExtra', $this-> cssExtra);
 		$this-> set('jsExtra', $this-> jsExtra);
 		$this->set('chamado', $chamado);
