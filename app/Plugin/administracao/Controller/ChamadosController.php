@@ -5,13 +5,15 @@ class ChamadosController extends AdministracaoAppController
 	public function index()
 	{
 		$options = array(
-			'fields' => array('Chamado.*'),
+			'fields' => array('Chamado.*', 'User.id', 'User.username'),
 			'conditions' => array(), //array('Chamado.id >= 1'),
 			'order' => array('Chamado.id' => 'DESC'),
 			'limit' => 10
 		);
 		$this-> paginate = $options;
 		$lChamados = $this-> paginate('Chamado');
+		//pr($lChamados);
+		//exit;
 		if(!$lChamados)
 		{
 			$this-> Session-> setFlashAtencao("Não há mensagens de chamados para exibir!");

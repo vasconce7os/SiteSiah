@@ -6,6 +6,14 @@ class Chamado extends AdministracaoAppModel
             'className' => 'Chamadomsg',
             // do exemplo //'conditions' => array('Chamadomsg.approved' => '1'),
             //'order' => 'Chamadomsg.created DESC'
+        ),
+        //'User'
+    );
+    
+    public $belongsTo = array(
+        'User' => array(
+            'className' => 'User'
         )
     );
+    
 }
