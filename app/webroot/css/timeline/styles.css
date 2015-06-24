@@ -31,7 +31,7 @@
 * {
   outline: none !important; }
 
-body {
+.timeline {
   font-family: "Source Sans Pro", sans-serif;
   color: black;
   background-color: #eef2f2;
@@ -420,10 +420,6 @@ label {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.05); }
 
-body {
-  background-color: #5bbcd5;
-  padding: 5em 0; }
-
 .timeline {
   list-style: none;
   position: relative;
@@ -457,7 +453,7 @@ body {
       font-weight: 600; }
       .timeline .timeline-row .timeline-time small {
         display: block;
-        color: white;
+        /*color: white;*/
         text-transform: uppercase;
         opacity: 0.75;
         font-size: 11px;
