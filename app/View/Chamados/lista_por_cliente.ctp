@@ -8,7 +8,7 @@
 
 	<?php
 	//pr($lChamados[0]);
-	pr($this->Session->read('Auth.User'));
+	//pr($this->Session->read('Auth.User'));
 	if($lChamados)
 	{
 		?>
@@ -29,20 +29,20 @@
 						(
 							$this-> Html-> link(
 									$chamado['Chamado']['id'],
-									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $chamado['Chamado']['id'])			
+									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", 'ext'=> "html", $chamado['Chamado']['id'])			
 								),
 							$this-> Html-> link(
 									$chamado['Chamado']['titulo'],
-									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $chamado['Chamado']['id'])			
+									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", 'ext'=> "html", $chamado['Chamado']['id'])			
 								),
 							$this-> Html-> link(
 									$chamado['Chamado']['status'],
-									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $chamado['Chamado']['id'])			
+									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", 'ext'=> "html", $chamado['Chamado']['id'])			
 								),
 
 							$this-> Html-> link(
 									$created-> format('Y/m/d \a\s H:i'),
-									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $chamado['Chamado']['id'])			
+									array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", 'ext'=> "html", $chamado['Chamado']['id'])			
 								),
 						)
 				);
