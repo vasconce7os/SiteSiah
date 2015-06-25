@@ -18,6 +18,8 @@ class AdministracaoAppController extends AppController
 	{
 		parent::beforeFilter();
 		
+        $this->Auth->allow(); // permitir tudo dentro de plugin Administracao
+
 		// autenticação moderna
 		$authentication = false;
 		$sessionAdminExiste = $this-> Session-> check('Admin');
