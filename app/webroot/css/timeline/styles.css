@@ -73,12 +73,6 @@ p {
 strong {
   font-weight: 700; }
 
-a {
-  color: #32b9b1; }
-  a:hover {
-    color: #666666;
-    text-decoration: none; }
-
 blockquote {
   border-color: #dddddd; }
 
@@ -114,16 +108,7 @@ hr {
 /*----------------------------------------------------------------------------------- */
 /*  Buttons */
 /*----------------------------------------------------------------------------------- */
-.btn {
-  border: 1px solid rgba(0, 0, 0, 0.25) !important;
-  font-weight: 600; }
-  .btn.active, .btn:active {
-    box-shadow: none; }
 
-.btn-primary {
-  background: #32b9b1; }
-  .btn-primary:hover, .btn-primary.active, .btn-primary:focus {
-    background: #2ea9a2; }
 
 .btn-success {
   background: #51be38; }
