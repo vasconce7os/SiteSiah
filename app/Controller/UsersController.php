@@ -70,6 +70,11 @@ class UsersController extends AppController
     }
 
 	public function login() {
+        $meta['robots'] = "noindex";
+        //pr($meta);
+        //exit;
+        $this-> setMetaTags($meta);
+
 	    if ($this->Auth->login()) {
 	        $this->redirect($this->Auth->redirect());
 	    } else {
@@ -88,4 +93,11 @@ class UsersController extends AppController
 		//exit;
 	    $this->redirect($this->Auth->logout());
 	}
+
+    public function session()
+    {
+        pr($this-> Session-> read());
+        //pr('lol');
+        exit;
+    }
 }
