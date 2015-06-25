@@ -103,7 +103,7 @@
                 </label>
                 <textarea  id="ChamadoResposta" name="data[Chamadomsg][0][msg]"></textarea>
             </div>
-            <input type="submit" value="OK" class="btn btn-primary"/>
+            <button type="submit" value="OK" class="btn btn-primary">OK</button>
         </form>
     </div>
 
