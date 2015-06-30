@@ -27,6 +27,8 @@ class ChamadosController extends AdministracaoAppController
 	{
 		$this-> Chamado-> id = $id;
 		$chamado = $this-> Chamado-> read();
+		
+		$chamado['Chamadomsg'] = $this-> Chamado-> getMessagesChamado($id);
 		if(!$chamado)
 		{
 			$this-> Session-> setFlashErro("Chamado não encontrado!");
@@ -34,19 +36,10 @@ class ChamadosController extends AdministracaoAppController
 		} else
 		{
 			//pr($this-> Chamado-> data['Chamado']['status']);
-			if($this-> Chamado-> data['Chamado']['status'] == 'a_ler')
-			{
-				//pr($this-> sessionAdmin);
-				//pr($this-> logged-> Admin-> id);
-				$this-> Chamado-> data['Chamado']['status'] = 'lido';
-				$this-> Chamado-> data['Chamado']['admin_id'] = $this-> logged-> Admin-> id;
-				$this-> Chamado-> save($this-> Chamado-> data);
-				$this-> Chamado-> data = $this-> Chamado-> read();
-				$chamado = $this-> Chamado-> data;
-
-			}
+			
 			//exit;
 		}
+		//pr($chamado);
 		$this-> request-> data = $chamado;
 		$this-> set('chamado', $chamado);
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);
