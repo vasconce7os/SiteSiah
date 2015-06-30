@@ -8,12 +8,13 @@ class Chamado extends AppModel
             //'order' => 'Chamadomsg.created DESC'
         )
     );
+    /*
     public $actsAs = array(
         'CakePHP-Enum-Behavior.Enum' => array(
             'satisfacao' => array('ruim'=> 'ruim','regular'=> 'regular','bom'=> 'bom','ótimo'=> 'ótimo')
         )
     );
-
+    */
     public function getMessagesChamado($idChamado)
     {
     	$idChamado = (int) $idChamado;
