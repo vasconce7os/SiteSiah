@@ -11,6 +11,7 @@ class ChamadosController extends AppController
 	//public $uses = array();
 	//var $scaffold;
 	var $components = array("Email");
+	public $helpers = array('Tinymce');
 
 	public function index()
 	{

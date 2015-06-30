@@ -380,7 +380,11 @@ label {
   background-color: white;
   border: 1px solid #dddddd;
   border-top: 0;
-  padding: 15px 15px 5px; }
+  padding: 15px 15px 5px; 
+  clear: both;
+  display: table;
+}
+
 
 /*----------------------------------------------------------------------------------- */
 /*  Progress Bars */
