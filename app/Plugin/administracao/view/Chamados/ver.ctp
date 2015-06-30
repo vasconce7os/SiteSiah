@@ -9,13 +9,81 @@
 		echo($title_for_layout);
 		?>
 	</h1>
-	<p>
-		Status: 
-		<?php
-		echo(utf8_encode($chamado['Chamado']['status']));
-		?>
-	</p>
+	<div class="text">
+		<label>
+			Status:
+		</label> 
+		<span>
+			<?php
+			echo(utf8_encode($chamado['Chamado']['status']));
+			?>
+		</span>
+	</div>
+	<div class="text">
+		<label>
+			Iniciado em: 
+		</label>
+		<span>
+			<time>
+			<?php
+			$chamadoCreated = DateTime::createFromFormat('Y-m-d H:i:s', $chamado['Chamado']['created']);
+			echo($chamadoCreated-> format('Y/m/d \a\s H:i:s'));
+			?>
+
+			</time>
+		</span>
+	</div>
+	<div class="text">
+		<label>
+			Cliente: 
+		</label>
+		<span>
+			<?php
+			echo($chamado['Cliente']['fantasia']);
+			?>
+		</span>
+	</div>
+	<div class="text">
+		<label>
+			Última alteração: 
+		</label>
+		<span>
+			<?php
+			
+			$modified = DateTime::createFromFormat('Y-m-d H:i:s', $chamado['Chamado']['modified']);
+			echo($modified-> format('Y/m/d \a\s H:i:s'));
+			?>
+		</span>
+	</div>
 	<?php
+	if($chamado['Chamado']['status'] == 'fechado')
+	{
+	?>
+
+		<div class="text">
+			<label>
+				Nota do cliente:
+			</label>
+			<span>
+				<?php
+				echo($chamado['Chamado']['nota']);
+				?>
+			</span>
+		</div>
+		<div class="text">
+			<label>
+				Satisfação do cliente:
+			</label>
+			<span>
+				<?php
+				echo($chamado['Chamado']['satisfacao']);
+				?>
+			</span>
+		</div>
+
+	<?php
+	}
+
 	//pr($chamado);
 	if(isset($chamado['Chamadomsg']))
 	{

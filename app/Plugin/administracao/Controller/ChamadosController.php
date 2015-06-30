@@ -2,6 +2,7 @@
 class ChamadosController extends AdministracaoAppController 
 {
 	public $components = array('Paginator', "Email");
+	public $uses = array("Administracao.Chamado", "Administracao.Cliente");
 	public function index()
 	{
 		$options = array(
@@ -28,7 +29,6 @@ class ChamadosController extends AdministracaoAppController
 		$this-> Chamado-> id = $id;
 		$chamado = $this-> Chamado-> read();
 		
-		$chamado['Chamadomsg'] = $this-> Chamado-> getMessagesChamado($id);
 		if(!$chamado)
 		{
 			$this-> Session-> setFlashErro("Chamado não encontrado!");
@@ -36,10 +36,16 @@ class ChamadosController extends AdministracaoAppController
 		} else
 		{
 			//pr($this-> Chamado-> data['Chamado']['status']);
-			
 			//exit;
 		}
-		//pr($chamado);
+		$chamado['Chamadomsg'] = $this-> Chamado-> getMessagesChamado($id);
+		$chamado['Cliente'] = $this-> Cliente-> findById($chamado['User']['cliente_id'], array('field'=> "fantasia", "id", "cnpj", "naoativo"));
+		foreach ($chamado['Cliente']['Cliente'] as $key => $propriedadeCliente) 
+		{
+			$chamado['Cliente'][$key] = $propriedadeCliente;
+		}
+		unset($chamado['Cliente']['Cliente']);
+		//pr($chamado['Cliente']); exit;
 		$this-> request-> data = $chamado;
 		$this-> set('chamado', $chamado);
 		$this-> set('title_for_layout', $chamado['Chamado']['titulo']);

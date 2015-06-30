@@ -221,7 +221,8 @@ legend {
 	color: #3A3C39;
 	font-size: 1.125rem;
 }
-label {
+label 
+{
 	width: 250px;
 	height: 25px;
 	display: inline-block;
@@ -920,7 +921,7 @@ header#topo > div > label
 	margin-top: -21px;
 }
 
-time
+.chamadomsg time
 {
 	font-size: 12px;
 }
