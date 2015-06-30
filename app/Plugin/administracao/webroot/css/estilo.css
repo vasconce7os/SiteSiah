@@ -549,6 +549,8 @@ nav > ul > li:last-child > .sub > li:hover > .sub {
 	background: rgba(255,255,255,0.7);
 	border: 1px solid rgba(0,0,0,0.2);
 	padding: 15px;
+
+	display: table;
 }
 /************************
 		rodape
@@ -837,4 +839,93 @@ header#topo > div > label
 .text span
 {
 	font-weight: bold;
+}
+
+/* chat */
+.chamadomsg {
+	position: relative;
+	background: #D8E0F9;
+	border: 1px solid #2F58A4;
+	margin-top: 10px;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	 border-radius: 5px;
+
+	width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+	width: -moz-max-content;    /* Firefox/Gecko */
+	width: -webkit-max-content; /* Chrome */
+	max-width: 1150px;
+	clear: both;
+
+
+}
+.setaEsquerda
+{
+	background-color: #D7F5C1;
+	margin: 10px 10px 10px 18px;
+}
+.setaEsquerda:after, .setaEsquerda:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.setaEsquerda:after {
+	border-color: rgba(216, 224, 249, 0);
+	border-right-color: #D7F5C1;
+	border-width: 20px;
+	margin-top: -20px;
+}
+.setaEsquerda:before {
+	border-color: rgba(47, 88, 164, 0);
+	border-right-color: #2F58A4;
+	border-width: 21px;
+	margin-top: -21px;
+}
+
+/* arrow right */
+.setaDireita
+{
+	margin: 10px 10px 10px 18px;
+	float: right;
+}
+.setaDireita:after, .setaDireita:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.setaDireita:after {
+
+	border-color: rgba(216, 224, 249, 0);
+	border-left-color: #D8E0F9;
+	border-width: 20px;
+	margin-top: -20px;
+}
+.setaDireita:before {	
+	border-color: rgba(47, 88, 164, 0);
+	border-left-color: #2F58A4;
+	border-width: 21px;
+	margin-top: -21px;
+}
+
+time
+{
+	font-size: 12px;
+}
+
+#botaoBostarMsg
+{
+	clear:both;
 }
