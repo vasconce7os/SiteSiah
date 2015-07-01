@@ -19,9 +19,8 @@ class ChamadosController extends AppController
 		
 	}
 
-	public function criar($veio = null)
+	public function criar()
 	{
-		//echo('veio: '); pr($veio); exit;
 		//$this-> set('title_for_layout', " Criar novo chamado");
 		if($this-> request-> is("post"))
 		{
@@ -30,15 +29,14 @@ class ChamadosController extends AppController
 			$chamadoForDB = $this-> data;
 			$chamadoForDB['Chamado']['user_id'] = $this-> Auth-> user('id');
 			$chamadoForDB['Chamado']['admin_id'] = 1; // Sistema
+			//$chamadoForDB['Chamado']['satisfacao'] = 'regular';
 
 
 			$chamadoForDB['Chamadomsg'][0]['user_id'] = $this-> Auth-> user('id');
-			
-			//$enviou = $this-> Chamado-> save($chamadoForDB);
-
 			//echo('<h1>$this-> Chamado</h1>');
 			//pr($this-> Chamado);
 			//echo("<h1>chamadoForDB</h1>");
+			//unset($chamadoForDB['Chamadomsg']);
 			//pr($chamadoForDB); 
 			//exit;
 
@@ -197,7 +195,7 @@ class ChamadosController extends AppController
 	}
 	function beforeRender()
 	{
-		$this->set($this-> Chamado-> enumValues());
+		//$this->set($this-> Chamado-> enumValues());
 		//pr($this-> Chamado-> enumValues()); exit;
 	}
 }
