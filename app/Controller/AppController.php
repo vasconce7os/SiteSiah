@@ -55,6 +55,15 @@ class AppController extends Controller
 		$this-> set('extPages', $this-> extPages);
 		$this-> set('sisCliente', $this-> sisCliente);
 	
+		if(isset($this-> request-> params['ext']) && $this-> request-> params['ext'] === 'json')
+		{
+			$this-> layout = 'ajax';
+	    	//$this->response->type('json');
+		}
+
+		//pr($this-> request);
+		//exit;
+
 		//metas
 		$meta['description'] = "A SIAH é uma empresa de software que trabalha no ramo de automação em gestão empresarial";
 		$meta['keywords'] =    "SIAH, Siah online, empresa SIAH, A7";

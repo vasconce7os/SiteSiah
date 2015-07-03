@@ -24,7 +24,7 @@
 /**
  * Exte troço aqui serve para manipular as extensões
  */
-Router::parseExtensions('html');
+Router::parseExtensions('html', 'json');
 
 
 /**
