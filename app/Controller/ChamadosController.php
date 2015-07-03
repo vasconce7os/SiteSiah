@@ -98,6 +98,10 @@ class ChamadosController extends AppController
 	{
 		$this-> set('title_for_layout', "Listando chamados de ". $this-> Auth-> user('username'));
 		$lChamados = $this-> Chamado-> findAllByUserId($this-> Auth-> user('id'));
+		$this-> cssExtra[] = array('file'=> 'bootstrap-table', 'comment'=> "table bootstrap", 'shortPath'=> true, 'media'=> "all");
+		$this-> jsExtra[] = array('file'=> 'bootstrap-table', 'comment'=> "table bootstrap", 'shortPath'=> true);
+		$this-> set('jsExtra', $this-> jsExtra);
+		$this-> set('cssExtra', $this-> cssExtra);
 		$this-> set('lChamados', $lChamados);
 	}
 
@@ -186,12 +190,25 @@ class ChamadosController extends AppController
 			$this-> redirect(array('action'=> "lista_por_cliente"));
 		}
 	}
+	public function resAjax()
+	{
+		$lChamados = $this-> Chamado-> find('all', array('fields'=> ));
+		//json_decode($lChamados);
+		$arr = array('a' => 1, 'blu' => 2, 'c' => array('mais'=> "treta"), 'd' => 4, 'e' => 5);
+		//$this-> set('arr', $arr);
+		//pr($lChamados[3]); 
+		//echo (json_encode($lChamados[3]));
+		exit;
+		$lChamados = $arr;
+		$lChamados = $lChamados[0];
+		$this-> set('lChamados', $lChamados);
+	}
 
 	function beforeFilter()
 	{
 		parent::beforeFilter();
 
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'resAjax');
 	}
 	function beforeRender()
 	{
