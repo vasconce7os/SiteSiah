@@ -112,9 +112,9 @@
     ?>
     <footer>
         <p>
-            ver todos os seus 
+            ver todos os 
             <a href="<?php echo($this-> request-> base); ?>/suporte/chamados/lista_por_cliente.html">
-                chamados
+                seus chamados
             </a>
         </p>
         <?php
