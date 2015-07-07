@@ -58,7 +58,7 @@ class AppController extends Controller
 		if(isset($this-> request-> params['ext']) && $this-> request-> params['ext'] === 'json')
 		{
 			$this-> layout = 'ajax';
-	    	//$this->response->type('json');
+	    	$this->response->type('json');
 		}
 
 		//pr($this-> request);
