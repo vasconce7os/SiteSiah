@@ -16,6 +16,10 @@ class ChamadosController extends AppController
 	public function index()
 	{
 		$this-> set('title_for_layout', "Chamados ao suporte SIAH");
+		$this-> cssExtra[] = array('file'=> 'bootstrap-table', 'comment'=> "table bootstrap", 'shortPath'=> true, 'media'=> "all");
+		$this-> jsExtra[] = array('file'=> 'bootstrap-table', 'comment'=> "table bootstrap", 'shortPath'=> true);
+		$this-> set('jsExtra', $this-> jsExtra);
+		$this-> set('cssExtra', $this-> cssExtra);
 		
 	}
 
@@ -192,23 +196,62 @@ class ChamadosController extends AppController
 	}
 	public function resAjax()
 	{
-		$lChamados = $this-> Chamado-> find('all', array('fields'=> ));
-		//json_decode($lChamados);
-		$arr = array('a' => 1, 'blu' => 2, 'c' => array('mais'=> "treta"), 'd' => 4, 'e' => 5);
-		//$this-> set('arr', $arr);
-		//pr($lChamados[3]); 
-		//echo (json_encode($lChamados[3]));
-		exit;
-		$lChamados = $arr;
-		$lChamados = $lChamados[0];
+		if(!isset($this-> request-> params['ext']) || $this-> request-> params['ext'] != 'json')
+		{
+			throw new NotFoundException("Arquivo não existe!");
+		}
+		$this-> Chamado-> unbindModel(
+		    array('hasMany' => array('Chamadomsg'))
+		);
+
+		if(isset($this-> request-> query['search'][0]))
+		{
+			$conditions = 
+				array
+				(
+					'and'=>array
+					(
+						"Chamado.titulo like"=> '%'.$this-> request-> query['search'].'%',
+						"Chamado.user_id"=> $this-> Auth-> user('id')
+					)
+					
+				);
+		} else
+		{
+
+			$conditions = 
+				array
+				(
+					'and'=>array
+					(
+						//"Chamado.id <"=> 43,
+						"Chamado.user_id"=> $this-> Auth-> user('id')
+					)
+					
+				);
+		}
+		$lChamados = $this-> Chamado-> find('all', 
+			array
+			(
+				'conditions'=> $conditions,
+				'fields'=> 
+				array
+				(
+					"Chamado.id", "Chamado.titulo", "Chamado.created", "Chamado.status"), 
+					'limit'=> 3087, 
+					'order'=> "titulo"
+					
+				)
+			);
 		$this-> set('lChamados', $lChamados);
+		//$this-> layout = 'default';
 	}
 
 	function beforeFilter()
 	{
 		parent::beforeFilter();
 
-		$this->Auth->allow('index', 'resAjax');
+		$this->Auth->allow('index');
 	}
 	function beforeRender()
 	{
