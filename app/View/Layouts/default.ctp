@@ -25,6 +25,7 @@
 	-->
 
     <script src="<?php echo($this-> request-> base); ?>/js/jquery-1.9.1.min.js"></script>
+	<script src="<?php echo($this-> request-> base); ?>/js/config.js"></script>
 
     <!-- metas padrão html -->
 	<meta name="keywords" content="<?php $this-> Siah-> printHtmlEscaped($meta['keywords']); ?>">

@@ -49,6 +49,7 @@ Router::parseExtensions('html', 'json');
 	);
 
 	Router::connect('/robots.txt', array('controller' => 'pages', 'action'=> 'robotstxt'));
+	Router::connect('/js/config.js', array('controller' => 'pages', 'action'=> 'configJs'));
 	
 
 	Router::connect('/suporte/chamados', array('controller' => 'chamados',));

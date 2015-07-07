@@ -118,6 +118,16 @@ class PagesController extends AppController {
 		$meta['url'] = $this-> getUrlServer() . $this-> request-> base . '/sitemap';
 		$this-> setMetaTags($meta);
 	}
+
+	/**
+	*	OBS: Não é apenas para acesso via AJAX
+	*/
+	public function configJs()
+	{
+
+		$this-> layout = "ajax";
+	    $this->response->type('js');
+	}
 	
 	public function beforeFilter()
 	{
