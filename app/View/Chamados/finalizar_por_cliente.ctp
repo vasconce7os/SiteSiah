@@ -5,6 +5,11 @@ View/Chamados/finaliza_por_cliente.ctp
 
 
 <div class="container">
+	<script>
+	$(document).ready(function(){
+	        $("#atendimento").addClass("active");
+	});
+	</script>
 	<h1>
 		<?php
 		echo($this-> request-> data['Chamado']['titulo']);

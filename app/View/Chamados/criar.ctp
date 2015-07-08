@@ -1,5 +1,10 @@
 
 <div class="container">
+	<script>
+	$(document).ready(function(){
+	        $("#atendimento").addClass("active");
+	});
+	</script>
 	<h1>
 		<?php
 		echo($title_for_layout);
