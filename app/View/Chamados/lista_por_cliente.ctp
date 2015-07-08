@@ -5,14 +5,6 @@
 		echo($title_for_layout);
 		?>
 	</h1>
-
-
-
-
-
-
-
-
     <div class="container">
         <div id="toolbar">
             <div class="form-inline" role="form">

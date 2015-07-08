@@ -39,7 +39,7 @@ if($lChamados)
 							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
 						),
 					$this-> Html-> link(
-							$cliente['Chamado']['status'],
+							utf8_encode($cliente['Chamado']['status']),
 							array('controller'=>  $this-> request-> params['controller'], 'action'=> "ver", $cliente['Chamado']['id'])			
 						),
 					$this-> Html-> link(
