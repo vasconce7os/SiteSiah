@@ -392,7 +392,7 @@
 
     BootstrapTable.LOCALES['en-US'] = BootstrapTable.LOCALES['en'] = {
         formatLoadingMessage: function () {
-            return 'Loading, please wait...';
+            return 'Carregando, aguarde...';
         },
         formatRecordsPerPage: function (pageNumber) {
             return sprintf('%s records per page', pageNumber);
@@ -404,7 +404,7 @@
             return 'Search';
         },
         formatNoMatches: function () {
-            return 'No matching records found';
+            return '<span class="alert alert-error">Não encontramos dados corespondentes!</span>';
         },
         formatPaginationSwitch: function () {
             return 'Hide/Show pagination';
