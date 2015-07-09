@@ -14,7 +14,7 @@
         <div id="toolbar">
             <div class="form-inline" role="form">
                 <div class="form-group">
-                    <input name="search" class="form-control" type="text" placeholder="Search">
+                    <input name="search" class="form-control" type="text" placeholder="Pesquisar">
                 </div>
                 <button id="ok" type="submit" class="btn btn-default">OK</button>
             </div>
