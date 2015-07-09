@@ -44,8 +44,12 @@
 
 	<p>
 		Saiba mais sobre 
-		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados.html">
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/">
 			chamados
+		</a>
+		ou confira 
+		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/lista_por_cliente.html">
+			seus chamados
 		</a>
 	</p>
 
