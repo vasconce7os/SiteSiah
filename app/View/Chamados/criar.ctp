@@ -11,9 +11,15 @@
 		?>
 	</h1>
 
-	<?php
-	//pr($lChamados[0]);
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 
+
+
+	<?php
 	echo $this-> Form-> create('Chamado', array());	
 	?>
 
@@ -22,7 +28,16 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('titulo', array('label'=> "Título"));
+		echo $this-> Form-> input('titulo', 
+			array
+			(
+				'label'=> "Título", 
+				'class'=> "form-control", 
+				'data-toggle'=> "tooltip", 
+				'data-placement'=> "bottom", 
+				'title'=> "Uma pequena descrição da dificuldade que você está tendo"
+			)
+		);
 		?>
 
 		<?php
@@ -30,9 +45,20 @@
 		?>
 
 		<?php
-		echo $this-> Form-> input('Chamadomsg.0.msg', array());
+		echo $this-> Form-> input('Chamadomsg.0.msg', 
+			array
+			(
+				'type'=> "password", 
+				'class'=> "form-control", 
+				'rows'=> "8", 
+				'label'=> "Mensagem:" ,
+				'data-toggle'=> "tooltip", 
+				'data-placement'=> "bottom", 
+				'title'=> "Escreva uma mensagem detalhando o erro com todos os detalhes que você julga ser relevante para a resolução do mesmo"
+			)
+		);
 		?>
-
+		<hr />
         <button type="submit" class="btn btn-primary">
         	Abrir chamado
         </button>
@@ -42,6 +68,7 @@
 	echo $this->Form->end();
 	?>
 
+	<hr />
 	<p>
 		Saiba mais sobre 
 		<a href="<?php echo($this-> request-> base); ?>/suporte/chamados/">

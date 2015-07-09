@@ -2,8 +2,11 @@
 <div class="container">
     <script>
     $(document).ready(function(){
-            $("#atendimento").addClass("active");
+        $("#atendimento").addClass("active");
     });
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
     </script>
 	<h1>
 		<?php
@@ -94,22 +97,27 @@
             <?php
         }
     ?>
+
     </div>
+
     <?php
     if(utf8_encode($chamado['Chamado']['status']) != 'fechado')
     {
     ?>
 
-    <div>
+    <div  class="extensionTimeline animated">
+        <hr />
         <form action="<?php echo($this-> request-> base . "/suporte/chamados/responderCliente/" . $chamado['Chamado']['id'])?>" method="post">
             <div class="input textarea">
                 <label for="ChamadoResposta">
-                    Sua mensagem:
+                    Adicione mais uma mensagem:
                 </label>
-                <textarea  id="ChamadoResposta" name="data[Chamadomsg][0][msg]"></textarea>
+                <textarea  id="ChamadoResposta" name="data[Chamadomsg][0][msg]" 
+                class="form-control" data-toggle="tooltip" data-placement="bottom" title="Adicione mais informação que ajudem nossa equipe a solucionar o problema"></textarea>
             </div>
-            <button type="submit" value="OK" class="btn btn-primary">OK</button>
+            <button type="submit" value="Enviar" class="btn btn-primary">OK</button>
         </form>
+        <hr />
     </div>
 
     <?php

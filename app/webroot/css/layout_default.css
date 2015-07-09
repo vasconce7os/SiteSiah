@@ -151,3 +151,19 @@ section footer
 {
     padding-top: 30px;
 }
+
+.extensionTimeline
+{
+    background-color: #EEF2F2;
+    padding: 10px;
+}
+
+form > button
+{
+    margin-top: 10px;
+}
+
+#panelLogin
+{
+    padding: 10px;
+}
