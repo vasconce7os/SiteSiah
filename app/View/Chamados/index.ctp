@@ -20,13 +20,13 @@ $(document).ready(function(){
 	?>
 
 		<p>
-			Um chamamdo é um pedido de ajuda via internet do cliente para a SIAH, 
-			para iniciar um chamado à equipe de suporte da SIAH 
+			Um chamado é um pedido de ajuda via internet do cliente para a SIAH, 
+			para iniciar um chamado à equipe de suporte da SIAH, 
 			é necesário o cliente efetuar 
 			<a href="<?php echo($this-> request-> base); ?>/users/login.html">
 				login no sistema 
 			</a>
-			sistema.
+			sistema para criar um chamado.
 		</p>
 
 	<?php
