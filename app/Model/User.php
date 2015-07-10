@@ -9,13 +9,13 @@ class User extends AppModel
         'username' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'A username is required'
+                'message' => 'O nome de usuário é requerido'
             )
         ),
         'password' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'A password is required'
+                'message' => 'A senha é requerida'
             )
         ),
         'role' => array(
