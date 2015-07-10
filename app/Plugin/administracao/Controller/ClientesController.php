@@ -31,6 +31,10 @@ class ClientesController extends AdministracaoAppController
 			try
 	        {
 	        	//pr($this-> request->data);
+	        	$userForDB['User']['username'] = $this-> request->data['User']['username'];
+	        	$userForDB['User']['codigo_ativacao'] = $this-> generateCode($userForDB);
+	        	$userForDB['User']['role'] = 'author';
+	        	//pr($userForDB);
 	        	//exit;
 	        	$extencoes = array ('image/jpeg', 'image/png');
 	            $dimensoes['larguraExata'] = 375;
@@ -69,20 +73,30 @@ class ClientesController extends AdministracaoAppController
                         $this-> Session->setFlash("O sistema não pede explicar o motivo pelo qual não foi possível salvar esta imagem!"
                             , 'default'
                             , array('class' => $this-> errorMsgClass)); //msgSucesso, msgAtencao, msgErro                        
-                    } else // atualizar caminho no db
+                    } else // atualizar caminho no db e salvar user
                     {
-                    	$dadosParaDb = $data['Cliente'];
-                        $dadosParaDb['url_logo'] = @$imgRetorno['caminho'];
-                        $dadosParaDb['fantasia'] = $data['Cliente']['fantasia'];
-                        $dadosParaDb['link'] = $data['Cliente']['link'];
-                        $dadosParaDb['admin_id'] = $this-> sessionAdmin[0]['Admin']['id'];
-                        //$dadosParaDb['status'] = true;
-                        //pr($dadosParaDb);
-                        //$nomeP = Inflector::slug($dadosParaDb['url']);
-                        //var_dump($nomeP);
+                    	//salvar user
+
+                    	$dadosParaDb['Cliente'] = $data['Cliente'];
+                        $dadosParaDb['Cliente']['url_logo'] = @$imgRetorno['caminho'];
+                        $dadosParaDb['Cliente']['fantasia'] = $data['Cliente']['fantasia'];
+                        $dadosParaDb['Cliente']['link'] = $data['Cliente']['link'];
+                        $dadosParaDb['Cliente']['admin_id'] = $this-> sessionAdmin[0]['Admin']['id'];
                         
-                        //exit;
-                        $retDB = $this-> Cliente-> save($dadosParaDb);
+                        $dadosParaDb['User'] = $userForDB['User'];
+
+                        pr($dadosParaDb);
+                        		
+                        $view = new View($this, false);
+						$view->set('data', $this-> request-> data);
+						$view->set('dadosParaDb', $dadosParaDb);
+						$resposta = $view->render('email_codigo_ativacao', 'ajax');
+						pr('foi');
+						echo($resposta);
+						/* */
+                        exit;
+
+                        $retDB = $this-> Cliente-> saveAll($dadosParaDb);
                         if($retDB)
                         {
                             $this-> Session->setFlash("Cliente cadastrado"
@@ -103,6 +117,19 @@ class ClientesController extends AdministracaoAppController
 	            echo $exc->getTraceAsString();
 	        }
 		}
+	}
+
+	private function generateCode($user = array())
+	{
+		$codigo = "";
+		$codigo = (uniqid() . substr($user["User"]['username'], 0, 10));
+		if( mb_strlen($user["User"]['username']) < 10)
+		{
+			throw new Exception("Nome de usuário muito curto");
+		}
+		$codigo .= mb_strlen($user["User"]['username']).substr($user["User"]['username'], -7) . time(); 
+		$codigo .= md5($codigo);
+		return ($codigo);
 	}
 
 	public function ver($id = null)
@@ -286,5 +313,11 @@ class ClientesController extends AdministracaoAppController
 	{
 		parent::beforeFilter();
 		$this-> set('title_for_layout', 'Clientes');
+	}
+	public function test()
+	{
+		$lClientes = $this-> Cliente-> find('all', array());
+		pr($lClientes);
+		exit;
 	}
 }

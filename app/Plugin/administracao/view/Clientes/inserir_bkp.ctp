@@ -16,13 +16,17 @@ echo $this-> Form->create('Cliente', array('type'=> "file"));
 <?php
 echo $this-> Form-> input('Cliente.cnpj', array('label'=> "CNPJ", 'type'=> "text"));
 ?>
-		
+
+<?php
+echo $this-> Form-> input('Cliente.naoativado', array('label'=> "Código de ativação"));
+?>
+			
 <?php
 echo $this-> Form-> input('Cliente.fantasia', array('label'=> "Nome fantasia"));
 ?>
 
 <?php
-echo $this-> Form-> input('Cliente.email', array('label'=> "Email", 'placeholder'=> "Email válido"));
+echo $this-> Form-> input('Cliente.email', array('label'=> "Email"));
 ?>
 			
 <?php
@@ -34,14 +38,6 @@ echo $this-> Form-> input('Cliente.link', array('label'=> "Site"));
 echo $this-> Form-> input('Cliente.url_logo', array('type' => 'file', 'label'=> "Logo"));
 ?>
 
-<?php
-echo $this-> Form-> input('User.username', array( 'label'=> "Nome de usuário", 'placeholder'=> "Sugerimos o próprio email"));
-?>
-
-<?php
-//echo $this-> Form-> input('User.codigo_ativacao', array('label'=> "Código de ativação"));
-?>
-	
 <?php 
 echo $this->Form-> submit('OK', array('type' => 'submit', 'class'=> "botao"));
 ?>
