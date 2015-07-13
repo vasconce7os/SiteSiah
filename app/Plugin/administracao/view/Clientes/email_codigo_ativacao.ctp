@@ -18,6 +18,7 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 		{
 			$pageURL .= $_SERVER["SERVER_NAME"];
 		}
+		pr($dadosParaDb);
 
 	
 ?>
@@ -42,7 +43,7 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 								<tr>
 									<td style="color:rgb(74, 66, 60);font-family:arial, helvetica, sans-serif;font-size:16px;padding-left:0px;padding-right:0px;">
 										<h1 style="text-align:center; color: #2F58A4;">
-											Validação de cadastro no site da SIAH para suporte via internet
+											Validação de cadastro da <?php echo($dadosParaDb['Cliente']['fantasia']); ?> no SIAH online
 										</h1>
 									</td>
 								</tr>
@@ -65,7 +66,10 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 											clientes, é via internet e pode ser usado com qualquer dispositivo
 											com um browser (navegador web) moderno.
 											A empresa
-											<?php echo($dadosParaDb['Cliente']['fantasia']); ?> foi uma das 
+											<strong>
+											<?php echo($dadosParaDb['Cliente']['fantasia']); ?>
+											</strong>
+											foi uma das 
 											selecionadas em nossa lista de clientes para iniciar os atendimentos.
 
 										</p>
@@ -90,13 +94,18 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 											Feito isto a empresa <?php echo($dadosParaDb['Cliente']['fantasia']); ?>
 											já pode solicitar atendimento via internet
 										</p>
+										<p style="text-align: center">
+											<a target="_blank" href="<?php echo($pageURL  . $this-> request-> base); ?>/users/ativar" title="código de ativação" style="font-size: 26pt; text-decoration: none; font-family:helvetica">
+												Codigo de ativação
+											</a>
+										</p>
 										<p>
 											OBSERVAÇÃO:
 											<em>
 											É importante saber que a senha criada e o nome de usuário
 											correspondentes a <?php echo($dadosParaDb['Cliente']['fantasia']); ?>
 											formam a identidade da empresa em nosso sistema, logo, qualquer
-											tarefa executada com os poderes dados a esta conta será
+											tarefa executada com os poderes concedidos a esta conta será
 											responsabilidade da <?php echo($dadosParaDb['Cliente']['fantasia']); ?>.
 											</em>
 										</p>
