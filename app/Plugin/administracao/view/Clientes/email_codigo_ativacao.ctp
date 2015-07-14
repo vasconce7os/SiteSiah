@@ -18,7 +18,7 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 		{
 			$pageURL .= $_SERVER["SERVER_NAME"];
 		}
-		pr($dadosParaDb);
+		//pr($dadosParaDb);
 
 	
 ?>
@@ -91,12 +91,15 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 											</li>
 										</ol>
 										<p>
-											Feito isto a empresa <?php echo($dadosParaDb['Cliente']['fantasia']); ?>
+											Feito isto a empresa 
+											<strong>
+											<?php echo($dadosParaDb['Cliente']['fantasia']); ?>
+											</strong>
 											já pode solicitar atendimento via internet
 										</p>
 										<p style="text-align: center">
-											<a target="_blank" href="<?php echo($pageURL  . $this-> request-> base); ?>/users/ativar" title="código de ativação" style="font-size: 26pt; text-decoration: none; font-family:helvetica">
-												Codigo de ativação
+											<a target="_blank" href="<?php echo($pageURL  . $this-> request-> base); ?>/users/ativar_via_url/<?php echo($dadosParaDb['User']['codigo_ativacao']); ?>" title="código de ativação" style="font-size: 26pt; text-decoration: none; font-family:helvetica">
+												Código de ativação
 											</a>
 										</p>
 										<p>
@@ -108,6 +111,10 @@ inicio APP/Plugin/Administracao/View/Clientes/email_codigo_ativacao.ctp
 											tarefa executada com os poderes concedidos a esta conta será
 											responsabilidade da <?php echo($dadosParaDb['Cliente']['fantasia']); ?>.
 											</em>
+										</p>
+										<hr />
+										<p>
+											Este e-mail foi enviado automaticamente pelo sistema da SIAH!
 										</p>
 
 									</td>

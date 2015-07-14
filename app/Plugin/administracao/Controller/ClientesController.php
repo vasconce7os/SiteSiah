@@ -85,7 +85,7 @@ class ClientesController extends AdministracaoAppController
                         
                         $dadosParaDb['User'] = $userForDB['User'];
 
-                        pr($dadosParaDb);
+                        //pr($dadosParaDb);
                         		
                         $view = new View($this, false);
 						$view->set('data', $this-> request-> data);

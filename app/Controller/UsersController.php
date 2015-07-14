@@ -6,7 +6,7 @@ class UsersController extends AppController
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add', 'logout');
+        $this->Auth->allow('add', 'logout', 'ativar_via_url');
     }
 
     public function index() {
@@ -99,5 +99,61 @@ class UsersController extends AppController
         pr($this-> Session-> read());
         //pr('lol');
         exit;
+    }
+
+    public function ativar_via_url($codigoAtivacao = null)
+    {
+        if(!$codigoAtivacao)
+        {
+            $this-> log("Tentou ativar sem código!");
+            throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema!", 1);
+        }
+        $this-> User-> bindModel(
+            array('belongsTo' => array('Cliente'))
+        );
+        /*
+        $user = $this-> User-> find('first',
+                array
+                (
+                    'conditions'=> array
+                    (
+                        array
+                        (
+                            'and'=> array
+                            (
+                                'User.codigo_ativacao ='=> $codigoAtivacao,
+                                //'not'=> array('User.password'=> null)
+                                'User.password ='=> null
+                            )
+                        )
+                        
+                    )
+                )
+            );
+        */
+
+        $user = $this-> User-> find('first',
+                array
+                (
+                    'conditions'=> array
+                    (
+                        'User.codigo_ativacao ='=> $codigoAtivacao                     
+                    )
+                )
+            );
+        //pr($user); exit;
+        if($user['User']['password'] === null)
+        {
+            //echo('lololoo');
+            $this-> set('user', $user);
+        } else
+        {
+            $this-> Session->setFlash("Este código já foi usado, alguém na 
+                empresa " . $user['Cliente']['fantasia'] . " já confirmou o cadastro!"
+                , 'default'
+                , array('class' => $this-> successMsgClass));
+        }
+
+
     }
 }
