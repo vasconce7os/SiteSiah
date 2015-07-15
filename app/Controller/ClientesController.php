@@ -6,9 +6,9 @@ class ClientesController extends AppController
 	public function index() 
 	{
 		$this-> set('title_for_layout', "Clientes da SIAH");
-		$meta['description'] = "a SIAH solu??es inteligentes tem um portf?lio repleto de clientes com solu??es consistentes e imediatas";
-		$meta['keywords'] = "clientes SIAH, portf?lio SIAH, parceiros da SIAH";
-		$meta['abstract'] = "O portf?lio da SIAH est? repleto de empresas que podem contar com solu??es consistentes e imediatas no que se refere a automa??o em gest?o empresarial.";
+		$meta['description'] = "a SIAH soluções inteligentes tem um portfólio repleto de clientes com soluções consistentes e imediatas";
+		$meta['keywords'] = "clientes SIAH, portfólio SIAH, parceiros da SIAH";
+		$meta['abstract'] = "O portfólio da SIAH está repleto de empresas que podem contar com soluções consistentes e imediatas no que se refere a automação em gestão empresarial.";
 		$this-> setMetaTags($meta);
 	}
 	public function lojas_baiano() 
@@ -25,15 +25,15 @@ class ClientesController extends AppController
 	public function amazonas_eletro() 
 	{
 		$this-> set('title_for_layout', "Cliente SIAH: Amazonas Eletro");
-		$meta['description'] = "AMAZONAS ELETROMEC?NICA atua na ?rea de Assist?ncia T?cnica e manuten??o de Motores e  Geradores El?tricos de Baixa e M?dia Tens?o, bomba centr?fuga e submersa";
+		$meta['description'] = "AMAZONAS ELETROMEC?NICA atua na ?rea de Assist?ncia T?cnica e manuten?ão de Motores e  Geradores El?tricos de Baixa e M?dia Tens?o, bomba centr?fuga e submersa";
 		$meta['keywords'] = "AMAZONAS ELETROMEC?NICA, AMAZONAS ELETRO, cliente SIAH, portfolio SIAH, A7";
-		$meta['abstract'] = "AMAZONAS ELETRO atua na ?rea de Assist?ncia T?cnica e manuten??o de Motores e  Geradores El?tricos de Baixa e M?dia Tens?o, bomba centr?fuga e submersa";
+		$meta['abstract'] = "AMAZONAS ELETRO atua na ?rea de Assist?ncia T?cnica e manuten?ão de Motores e  Geradores El?tricos de Baixa e M?dia Tens?o, bomba centr?fuga e submersa";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
 	public function ferragens_sao_pedro() 
 	{
-		$this-> set('title_for_layout', "Cliente SIAH: Ferragens S?o Pedro");
+		$this-> set('title_for_layout', "Cliente SIAH: Ferragens São Pedro");
 		$meta['description'] = "Av Torquato Tapajos, 11546, Manaus";
 		$meta['keywords'] = "Av Torquato Tapajos, 11546, Manaus, cliente SIAH, A7";
 		$meta['abstract'] = "Av Torquato Tapajos, 11546, Manaus";
@@ -60,10 +60,10 @@ class ClientesController extends AppController
 	}
 	public function fazenda_sao_pedro() 
 	{
-		$this-> set('title_for_layout', "Cliente SIAH: Fazenda S?o Pedro");
-		$meta['description'] = "A Fazenda S?o Pedro est? localizada na BR-174 e fornece ovos regionais e selecionados, atende pequenos e grandes comerciantes";
-		$meta['keywords'] = "Fazenda S?o Pedro, Ovos S?o Pedro, cliente SIAH, A7";
-		$meta['abstract'] = "A Fazenda S?o Pedro est? localizada na BR-174 e fornece ovos regionais e selecionados, atende pequenos e grandes comerciantes";
+		$this-> set('title_for_layout', "Cliente SIAH: Fazenda São Pedro");
+		$meta['description'] = "A Fazenda São Pedro est? localizada na BR-174 e fornece ovos regionais e selecionados, atende pequenos e grandes comerciantes";
+		$meta['keywords'] = "Fazenda São Pedro, Ovos São Pedro, cliente SIAH, A7";
+		$meta['abstract'] = "A Fazenda São Pedro est? localizada na BR-174 e fornece ovos regionais e selecionados, atende pequenos e grandes comerciantes";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
@@ -88,9 +88,9 @@ class ClientesController extends AppController
 	public function rei_das_mangueiras() 
 	{
 		$this-> set('title_for_layout', "Cliente SIAH: Rei das Mangueiras");
-		$meta['description'] = "O Rei das MangueiraS fornece mangueiras automotivas, industriais e hidr?ulicas, desde baixa, media, alta e super alta press?o de diversos tamanhos";
+		$meta['description'] = "O Rei das MangueiraS fornece mangueiras automotivas, industriais e hidr?ulicas, desde baixa, media, alta e super alta pressão de diversos tamanhos";
 		$meta['keywords'] = "Rei das Mangueiras, mangueiras, cliente SIAH, A7";
-		$meta['abstract'] = "O Rei das MangueiraS fornece mangueiras automotivas, industriais e hidr?ulicas, desde baixa, media, alta e super alta press?o de diversos tamanhos";
+		$meta['abstract'] = "O Rei das MangueiraS fornece mangueiras automotivas, industriais e hidr?ulicas, desde baixa, media, alta e super alta pressão de diversos tamanhos";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
@@ -117,9 +117,9 @@ class ClientesController extends AppController
 	public function casa_da_borracha() 
 	{
 		$this-> set('title_for_layout', "Casa da Borracha");
-		$meta['description'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa??o Industrial";
+		$meta['description'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa?ão Industrial";
 		$meta['keywords'] = "Casa da Borracha, cliente SIAH, usa o A7";
-		$meta['abstract'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa??o Industrial";
+		$meta['abstract'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa?ão Industrial";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
@@ -127,9 +127,9 @@ class ClientesController extends AppController
 	public function dubom_temperos() 
 	{
 		$this-> set('title_for_layout', "Casa da Borracha");
-		$meta['description'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa??o Industrial";
+		$meta['description'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa?ão Industrial";
 		$meta['keywords'] = "Casa da Borracha, cliente SIAH, usa o A7";
-		$meta['abstract'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa??o Industrial";
+		$meta['abstract'] = "Comercializa correias, mangueiras, cilindros, mangotes, len??is de borracha, artefatos de borracha em geral, EPI`s e servi?os de Automa?ão Industrial";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
@@ -145,18 +145,18 @@ class ClientesController extends AppController
 	public function forca_construtiva()
 	{
 		$this-> set('title_for_layout', "For?a Construtiva");
-		$meta['description'] = "A For?a Construtiva ? a uni?o de dez lojas tradicionais de Material de Constru??o de Manaus.";
+		$meta['description'] = "A For?a Construtiva ? a união de dez lojas tradicionais de Material de Constru?ão de Manaus.";
 		$meta['keywords'] = "For?a construtiva, cliente SIAH, f construtiva";
-		$meta['abstract'] = "A For?a Construtiva ? a uni?o de dez lojas tradicionais de Material de Constru??o de Manaus";
+		$meta['abstract'] = "A For?a Construtiva ? a união de dez lojas tradicionais de Material de Constru?ão de Manaus";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
 	public function inox_pro()
 	{
 		$this-> set('title_for_layout', "Inox Pr?");
-		$meta['description'] = "Especialista na fabrica??o de pe?as em a?o inoxid?vel em geral a Inox Pr? tem conquistado espa?o no mercado Manauara e brasileiro.";
+		$meta['description'] = "Especialista na fabrica?ão de pe?as em aão inoxid?vel em geral a Inox Pr? tem conquistado espaão no mercado Manauara e brasileiro.";
 		$meta['keywords'] = "Inox Pro, cliente SIAH, Inox, Inox Manaus";
-		$meta['abstract'] = "Especialista na fabrica??o de pe?as em a?o inoxid?vel em geral a Inox Pro tem conquistado espa?o no mercado Manauara e brasileiro.";
+		$meta['abstract'] = "Especialista na fabrica?ão de pe?as em aão inoxid?vel em geral a Inox Pro tem conquistado espaão no mercado Manauara e brasileiro.";
 		$meta['url'] = $this-> curPageURL() .'/'. $this-> request-> controller .'/'. $this-> request-> action . $this-> extPages;
 		$this-> setMetaTags($meta);
 	}
@@ -198,7 +198,12 @@ class ClientesController extends AppController
 		//pr($pageURL);
 		return $pageURL;
 	}
-	
+	function session()
+	{
+		$ses = $this-> Session-> read();
+		pr($ses);
+		exit;
+	}
 	function beforeFilter()
 	{
 		parent::beforeFilter();
