@@ -106,7 +106,7 @@ class UsersController extends AppController
         if(!$codigoAtivacao)
         {
             $this-> log("Tentou ativar sem código!");
-            throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema!", 1);
+            throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema, o código de ativação não existe!", 1);
         }
         $this-> User-> bindModel(
             array('belongsTo' => array('Cliente'))
@@ -141,6 +141,11 @@ class UsersController extends AppController
                     )
                 )
             );
+        if(!$user)
+        {
+            $this-> log("Tentou ativar com código inexistente!");
+            throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema, código de ativação inexistente!", 1);
+        }
         //pr($user); exit;
         if($user['User']['password'] === null)
         {
@@ -152,8 +157,51 @@ class UsersController extends AppController
                 empresa " . $user['Cliente']['fantasia'] . " já confirmou o cadastro!"
                 , 'default'
                 , array('class' => $this-> successMsgClass));
+            $this->redirect('/');
         }
 
-
+        if($this-> request-> is('post'))
+        {
+            //debug("salvaer a treta");
+            //pr($this-> request-> data);
+            $msgError = null;
+            if($this-> request-> data['User']['password'] == $this-> request-> data['User']['password2'])
+            {
+                $dadosForDB['User']['password'] = $this-> request-> data['User']['password'];
+            } else
+            {
+                $msgError .= "<p>As senha não coicidem!</p>";
+            }
+            if($this-> request-> data['User']['username'] == $this-> request-> data['User']['username2'])
+            {
+                $dadosForDB['User']['username'] = $this-> request-> data['User']['username'];
+            } else
+            {
+                $msgError .= "<p>Digite o nome de usuário corretamente!</p>";
+            }
+            if($msgError === null)
+            {
+                $dadosForDB['User']['id'] = $user['User']['id'];
+                //debug($dadosForDB);
+                //debug("Salba o troço!"); exit;
+                if($this-> User-> save($dadosForDB))
+                {
+                    $this-> Session->setFlash("Cadastro de usuário confirmado, representantes da 
+                        empresa <strong>" . $user['Cliente']['fantasia'] . "</strong> já podem solicitar atendimento online"
+                        , 'default'
+                        , array('class' => $this-> successMsgClass)); 
+                    //$this-> redirect(array('action'=> "login"));
+                    $this->Session->write('Auth.redirect', "/");
+                    //exit;
+                    $this-> redirect(array('action'=> "login"));
+                }
+            } else
+            {
+                $this-> Session->setFlash($msgError
+                    , 'default'
+                    , array('class' => $this-> errorMsgClass)); 
+            }
+            //exit;
+        }
     }
 }
