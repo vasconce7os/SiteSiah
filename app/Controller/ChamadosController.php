@@ -232,14 +232,15 @@ class ChamadosController extends AppController
 		}
 		$lChamados = $this-> Chamado-> find('all', 
 			array
-			(
-				'conditions'=> $conditions,
-				'fields'=> 
-				array
 				(
-					"Chamado.id", "Chamado.titulo", "Chamado.created", "Chamado.status"), 
+					'conditions'=> $conditions,
+					'fields'=> 
+					array
+					(
+						"Chamado.id", "Chamado.titulo", "Chamado.created", "Chamado.status"
+					), 
 					'limit'=> 3087, 
-					'order'=> "titulo"
+					'order'=> array("Chamado.modified desc")
 					
 				)
 			);
