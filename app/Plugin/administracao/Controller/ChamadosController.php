@@ -27,6 +27,9 @@ class ChamadosController extends AdministracaoAppController
 	public function ver($id = null)
 	{
 		$this-> Chamado-> id = $id;
+	    $this-> Chamado-> bindModel(
+		    array('belongsTo' => array('Admin'))
+		);
 		$chamado = $this-> Chamado-> read();
 		
 		if(!$chamado)
