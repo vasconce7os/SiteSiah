@@ -2,8 +2,6 @@
 // app/Controller/UsersController.php
 class UsersController extends AppController 
 {
-
-
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'logout', 'ativar_via_url');
@@ -71,8 +69,6 @@ class UsersController extends AppController
 
 	public function login() {
         $meta['robots'] = "noindex";
-        //pr($meta);
-        //exit;
         $this-> setMetaTags($meta);
 
 	    if ($this->Auth->login()) {
@@ -89,15 +85,12 @@ class UsersController extends AppController
 	}
 
 	public function logout() {
-		//pr("para");
-		//exit;
 	    $this->redirect($this->Auth->logout());
 	}
 
     public function session()
     {
         pr($this-> Session-> read());
-        //pr('lol');
         exit;
     }
 
@@ -108,6 +101,7 @@ class UsersController extends AppController
             $this-> log("Tentou ativar sem código!");
             throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema, o código de ativação não existe!", 1);
         }
+        $this-> set('title_for_layout', "Ativar cadastro via código");
         $this-> User-> bindModel(
             array('belongsTo' => array('Cliente'))
         );
@@ -146,24 +140,19 @@ class UsersController extends AppController
             $this-> log("Tentou ativar com código inexistente!");
             throw new Exception("Vamos interpretar isto como uma tentativa de burlar o sistema, código de ativação inexistente!", 1);
         }
-        //pr($user); exit;
         if($user['User']['password'] === null)
         {
-            //echo('lololoo');
             $this-> set('user', $user);
         } else
         {
             $this-> Session->setFlash("Este código já foi usado, alguém na 
                 empresa " . $user['Cliente']['fantasia'] . " já confirmou o cadastro!"
                 , 'default'
-                , array('class' => $this-> successMsgClass));
+                , array('class' => $this-> warningMsgClass));
             $this->redirect('/');
         }
-
         if($this-> request-> is('post'))
         {
-            //debug("salvaer a treta");
-            //pr($this-> request-> data);
             $msgError = null;
             if($this-> request-> data['User']['password'] == $this-> request-> data['User']['password2'])
             {
@@ -182,17 +171,13 @@ class UsersController extends AppController
             if($msgError === null)
             {
                 $dadosForDB['User']['id'] = $user['User']['id'];
-                //debug($dadosForDB);
-                //debug("Salba o troço!"); exit;
                 if($this-> User-> save($dadosForDB))
                 {
                     $this-> Session->setFlash("Cadastro de usuário confirmado, representantes da 
                         empresa <strong>" . $user['Cliente']['fantasia'] . "</strong> já podem solicitar atendimento online"
                         , 'default'
-                        , array('class' => $this-> successMsgClass)); 
-                    //$this-> redirect(array('action'=> "login"));
+                        , array('class' => $this-> successMsgClass));
                     $this->Session->write('Auth.redirect', "/");
-                    //exit;
                     $this-> redirect(array('action'=> "login"));
                 }
             } else
@@ -201,7 +186,6 @@ class UsersController extends AppController
                     , 'default'
                     , array('class' => $this-> errorMsgClass)); 
             }
-            //exit;
         }
     }
 }
