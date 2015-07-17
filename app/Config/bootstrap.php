@@ -72,7 +72,6 @@ Cache::config('default', array('engine' => 'File'));
 
 // Vasconcelos
 CakePlugin::load('Administracao');
-CakePlugin::load('CakePHP-Enum-Behavior');
 
 
 /**
