@@ -38,6 +38,8 @@ class AppController extends Controller
 	var $infoMsgClass = 'alert alert-info';
 	var $errorMsgClass = 'alert alert-error';
 	var $successMsgClass = 'alert alert-success';
+	var $warningMsgClass = 'alert alert-warning';
+	
 
     public $components = array(
         'Session',
