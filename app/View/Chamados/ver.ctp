@@ -127,6 +127,7 @@
         <p>
             ver todos os 
             <a href="<?php echo($this-> request-> base); ?>/suporte/chamados/lista_por_cliente.html">
+                 <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
                 seus chamados
             </a>
         </p>

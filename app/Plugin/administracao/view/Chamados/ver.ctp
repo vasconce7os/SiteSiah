@@ -1,13 +1,10 @@
 
 <div class="">
-
-	<style type="text/css">
-
-	</style>
 	<h1>
 		<?php
 		echo($title_for_layout);
 		?>
+
 	</h1>
 	<div class="text">
 		<label>
@@ -17,6 +14,7 @@
 			<?php
 			echo(utf8_encode($chamado['Chamado']['status']));
 			?>
+
 		</span>
 	</div>
 	<div class="text">
@@ -41,6 +39,7 @@
 			<?php
 			echo($chamado['Cliente']['fantasia']);
 			?>
+
 		</span>
 	</div>
 	<div class="text">
@@ -49,17 +48,16 @@
 		</label>
 		<span>
 			<?php
-			
 			$modified = DateTime::createFromFormat('Y-m-d H:i:s', $chamado['Chamado']['modified']);
 			echo($modified-> format('Y/m/d \a\s H:i:s'));
 			?>
+
 		</span>
 	</div>
 	<?php
 	if($chamado['Chamado']['status'] == 'fechado')
 	{
 	?>
-
 		<div class="text">
 			<label>
 				Nota do cliente:
@@ -68,6 +66,7 @@
 				<?php
 				echo($chamado['Chamado']['nota']);
 				?>
+
 			</span>
 		</div>
 		<div class="text">
@@ -78,13 +77,12 @@
 				<?php
 				echo($chamado['Chamado']['satisfacao']);
 				?>
+
 			</span>
 		</div>
 
 	<?php
 	}
-
-	//pr($chamado);
 	if(isset($chamado['Chamadomsg']))
 	{
 		foreach ($chamado['Chamadomsg'] as $key => $chamadomsg)
@@ -101,24 +99,49 @@
 
 			<div class="chamadomsg <?php echo($classDirecao); ?>"> <!-- chamadomsg -->
 				<div class="talktext">
-				<p>
-	  				<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-					<?php
-					echo($chamadomsg['Chamadomsg']['msg']);
-					?>
-				</p>
-				<p>
-					<time>
-					<?php
-					$created = DateTime::createFromFormat('Y-m-d H:i:s', $chamadomsg['Chamadomsg']['created']);
-					echo($created-> format('Y/m/d \a\s H:i'));
-					?>
-					</time>
-				</p>
-			</div>
+					<p>
+		  				<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+						<?php
+						echo($chamadomsg['Chamadomsg']['msg']);
+						?>
+					</p>
+					<p>
+						<time>
+						<?php
+						$created = DateTime::createFromFormat('Y-m-d H:i:s', $chamadomsg['Chamadomsg']['created']);
+						echo($created-> format('Y/m/d \a\s H:i'));
+						?>
+						
+						</time>
+						&#8195;
+						<span class="detalheBalao">
+							<?php
+							$admLogged = $this-> Session-> read('Admin');
+							if($admLogged[0]['User']['id'] != $chamadomsg['User']['id'])
+							{
+							?>
+
+								De: 
+								<?php
+
+								echo($chamadomsg['User']['username'] . ' (' .$chamadomsg[0]['tipoUsuario'] . ')');
+								?>
+							<?php
+							} else
+							{
+							?>
+
+							Por Você
+							<?php
+							}
+							?>
+
+						</span>
+					</p>
+				</div>
 			</div>
 
-			<?php
+		<?php
 		}
 	}
 	if(utf8_encode($chamado['Chamado']['status']) != "fechado")

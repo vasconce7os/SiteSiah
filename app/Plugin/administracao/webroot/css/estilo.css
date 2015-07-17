@@ -921,9 +921,10 @@ header#topo > div > label
 	margin-top: -21px;
 }
 
-.chamadomsg time
+.chamadomsg time, .detalheBalao
 {
 	font-size: 12px;
+	/*text-indent: 37em; */
 }
 
 #botaoBostarMsg
