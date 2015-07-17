@@ -85,23 +85,33 @@ class ClientesController extends AdministracaoAppController
                         
                         $dadosParaDb['User'] = $userForDB['User'];
 
-                        //pr($dadosParaDb);
+                        pr($dadosParaDb);
                         		
                         $view = new View($this, false);
 						$view->set('data', $this-> request-> data);
 						$view->set('dadosParaDb', $dadosParaDb);
 						$resposta = $view->render('email_codigo_ativacao', 'ajax');
-						pr('foi');
-						echo($resposta);
+						//pr('foi');
+						//echo($resposta);
 						/* */
-                        exit;
+                        //exit;
 
                         $retDB = $this-> Cliente-> saveAll($dadosParaDb);
                         if($retDB)
                         {
-                            $this-> Session->setFlash("Cliente cadastrado"
-                                , 'default'
-                                , array('class' => $this-> successMsgClass)); //msgSucesso, msgAtencao, msgErro
+                        	$retEmail = $this-> enviaEmail($dadosParaDb['Cliente']['email'], "Validação de cadastro no sistema web da SIAH", $resposta, $this-> sisCliente['nome']);
+							if($retEmail)
+							{
+	                            $this-> Session->setFlash("Cliente cadastrado"
+	                                , 'default'
+	                                , array('class' => $this-> successMsgClass));
+	                        } else
+							{
+	                            $this-> Session->setFlash("Não foi possível enviar o email de confirmação do cliente"
+	                                , 'default'
+	                                , array('class' => $this-> msgErro));
+							}
+							
                             $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
                         } else
                         {
