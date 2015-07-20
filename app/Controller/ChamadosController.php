@@ -25,7 +25,7 @@ class ChamadosController extends AppController
 
 	public function criar()
 	{
-		//$this-> set('title_for_layout', " Criar novo chamado");
+		$this-> set('title_for_layout', " Criar novo chamado");
 		if($this-> request-> is("post"))
 		{
 			//$this-> log("no enviar: ? chamado ");
@@ -71,16 +71,20 @@ class ChamadosController extends AppController
 			//request get
 		}
 	}
-	public function ver($id = null) 
+	public function ver($id = null)
 	{
 	    $this-> Chamado-> unbindModel(
 		    array('hasMany' => array('Chamadomsg'))
 		);
-        //$chamado = $this-> Chamado-> findById($id, array("Chamado.id", 'Chamado.status', "Chamado.titulo"));
+	    $this-> Chamado-> bindModel(
+		    array('belongsTo' => array('Admin' 
+		    	//=>array('fields'=> 'id') //foi subescrito
+		    	))
+		);
         $chamado = $this-> Chamado-> find('first', array
 			(
 				'conditions'=> array('Chamado.id'=> $id),
-        		'fields'=> array("Chamado.id", 'Chamado.status', "Chamado.titulo", "Chamado.user_id")
+        		'fields'=> array("Chamado.id", 'Chamado.status', "Chamado.titulo", "Chamado.user_id, Admin.id, Admin.login, Admin.user_id")
         	));
 		if (!$chamado)
 		{

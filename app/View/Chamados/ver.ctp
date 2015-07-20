@@ -13,12 +13,18 @@
 		echo($title_for_layout);
 		?>
 	</h1>
-	<p>
-		Status: 
-		<?php
-		echo(utf8_encode($chamado['Chamado']['status']));
-		?>
-	</p>
+    <p>
+        Status: 
+        <?php
+        echo(utf8_encode($chamado['Chamado']['status']));
+        ?>
+    </p>
+    <p>
+        Suporte: 
+        <?php
+        echo($chamado['Admin']['login']);
+        ?>
+    </p>
 	<?php
 	//pr($chamado);
 	?>
