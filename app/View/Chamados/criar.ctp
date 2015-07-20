@@ -54,7 +54,7 @@ $(function () {
 				'label'=> "Mensagem:" ,
 				'data-toggle'=> "tooltip", 
 				'data-placement'=> "bottom", 
-				'title'=> "Escreva uma mensagem detalhando o erro com todos os detalhes que você julga ser relevante para a resolução do mesmo"
+				'title'=> "Escreva uma mensagem relatando o erro com todos os detalhes que você julga ser relevante para a resolução do mesmo"
 			)
 		);
 		?>
