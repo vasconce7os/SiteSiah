@@ -10,7 +10,11 @@ class ClientesController extends AdministracaoAppController
 			'fields' => array('Cliente.id', 'Cliente.cnpj', 'Cliente.fantasia', 'Cliente.email', 'Cliente.url_logo', 'Cliente.created'),
 			'conditions' => array(),
 			'order' => array('Cliente.fantasia' => 'ASC'),
-			'limit' => 10
+			'limit' => 10,
+			'paramType' => 'querystring'
+		);
+		$this-> Cliente-> unbindModel(
+		    array('hasOne' => array('User'))
 		);
 		$this-> paginate = $options;
 		$lClientes = $this-> paginate('Cliente');

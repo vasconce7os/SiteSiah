@@ -8,7 +8,8 @@ class ContatosController extends AdministracaoAppController
 			'fields' => array('Contato.id', 'Contato.nome', 'Contato.tipo', 'Contato.email', 'Contato.assunto', 'Contato.telefone', 'Contato.created', 'Contato.status'),
 			'conditions' => array(), //array('Contato.id >= 1'),
 			'order' => array('Contato.id' => 'DESC'),
-			'limit' => 10
+			'limit' => 10,
+			'paramType' => 'querystring'
 		);
 		$this-> paginate = $options;
 		$lContatos = $this-> paginate('Contato');

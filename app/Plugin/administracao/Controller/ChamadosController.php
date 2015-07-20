@@ -9,7 +9,8 @@ class ChamadosController extends AdministracaoAppController
 			'fields' => array('Chamado.*', 'User.id', 'User.username'),
 			'conditions' => array(), //array('Chamado.id >= 1'),
 			'order' => array('Chamado.id' => 'DESC'),
-			'limit' => 10
+			'limit' => 10,
+			'paramType' => 'querystring'
 		);
 		$this-> paginate = $options;
 		$lChamados = $this-> paginate('Chamado');
