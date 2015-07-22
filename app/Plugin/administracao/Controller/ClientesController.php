@@ -44,6 +44,7 @@ class ClientesController extends AdministracaoAppController
 	            $dimensoes['larguraExata'] = 375;
 	            $dimensoes['alturaExata'] = 360;
 	            $data = $this-> request->data;
+	        	/*
 	            $img = $data['Cliente']['url_logo'];
 	            $imgRetorno = $this-> Images-> checaArquivoDimensaoExata($extencoes, $dimensoes, $img);
 	            if($imgRetorno['OK'] == FALSE)
@@ -81,6 +82,7 @@ class ClientesController extends AdministracaoAppController
                     {
                     	//salvar user
 
+						*/
                     	$dadosParaDb['Cliente'] = $data['Cliente'];
                         $dadosParaDb['Cliente']['url_logo'] = @$imgRetorno['caminho'];
                         $dadosParaDb['Cliente']['fantasia'] = $data['Cliente']['fantasia'];
@@ -88,8 +90,8 @@ class ClientesController extends AdministracaoAppController
                         $dadosParaDb['Cliente']['admin_id'] = $this-> sessionAdmin[0]['Admin']['id'];
                         
                         $dadosParaDb['User'] = $userForDB['User'];
-
-                        pr($dadosParaDb);
+						
+						//pr($dadosParaDb);
                         		
                         $view = new View($this, false);
 						$view->set('data', $this-> request-> data);
@@ -116,14 +118,14 @@ class ClientesController extends AdministracaoAppController
 	                                , array('class' => $this-> msgErro));
 							}
 							
-                            $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
+                            //$this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
                         } else
                         {
                             $this-> Session->setFlash("Erro ao inserir no banco de dados!"
                                 , 'default'
                                 , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro                        
-                        }
-                    }
+                        //}
+                    //}
                 }
                 //exit;
 	        } catch (Exception $exc) 
