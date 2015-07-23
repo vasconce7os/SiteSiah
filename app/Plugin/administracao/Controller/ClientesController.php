@@ -2,7 +2,7 @@
 class ClientesController extends AdministracaoAppController 
 {
 	//public $components = array('Paginator', "Email");
-	public $components = array('Administracao.Images', 'Paginator');
+	public $components = array('Administracao.Images', 'Paginator', "Email");
 	public $uses = array('Administracao.Cliente');
 	public function index()
 	{
@@ -118,7 +118,7 @@ class ClientesController extends AdministracaoAppController
 	                                , array('class' => $this-> msgErro));
 							}
 							
-                            //$this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
+                            $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
                         } else
                         {
                             $this-> Session->setFlash("Erro ao inserir no banco de dados!"
