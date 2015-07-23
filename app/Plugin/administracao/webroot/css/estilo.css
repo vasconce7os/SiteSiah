@@ -543,15 +543,13 @@ nav > ul > li:last-child > .sub > li:hover > .sub {
 *************************/
 #container {
 	width: 1170px;
-	/*min-height: 400px; Vasconcelos */
+	min-height: 15em;
 	margin: 15px auto;
 	position: relative;
 	clear: both;
 	background: rgba(255,255,255,0.7);
 	border: 1px solid rgba(0,0,0,0.2);
 	padding: 15px;
-
-	display: table;
 }
 /************************
 		rodape
