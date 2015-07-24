@@ -137,13 +137,21 @@ class ChamadosController extends AppController
 			$chamadoForDB['Chamadomsg'][0]['msg'] = $this-> request-> data['Chamadomsg'][0]['msg'];
 			//pr($chamadoForDB);
 			//exit;
-			$salvou = $this-> Chamado-> saveAll($chamadoForDB);
-			$this-> log('salvou a marcação do email no banco: ');
-			$this-> log($salvou);
-			//exit;
-			$this-> Session->setFlash($this-> Auth-> user('username') . ', sua nova mensagem foi adicionada com sucesso ao chamado de id ' . $this-> Chamado-> id
-				, 'default'
-				, array('class' => $this-> successMsgClass));
+			if(!empty($chamadoForDB['Chamadomsg'][0]['msg']))
+			{
+				$salvou = $this-> Chamado-> saveAll($chamadoForDB);
+				//$this-> log('salvou a marcação do email no banco: ');
+				//$this-> log($salvou);
+				//exit;
+				$this-> Session->setFlash($this-> Auth-> user('username') . ', sua nova mensagem foi adicionada com sucesso ao chamado de id ' . $this-> Chamado-> id
+					, 'default'
+					, array('class' => $this-> successMsgClass));
+			} else
+			{
+				$this-> Session->setFlash("Você não pode enviar uma mensagem vazia!"
+					, 'default'
+					, array('class' => $this-> errorMsgClass));				
+			}
 			$this-> redirect(array('controller' => 'chamados', 'action' => 'ver', $this-> Chamado-> id));
 		}
 		$this-> jsExtra[] = array('file'=> $this-> request-> base . '/administracao/ckeditor/ckeditor.js', 'comment'=> "CKEditor para edição de texto rico", 'shortPath' => false);
