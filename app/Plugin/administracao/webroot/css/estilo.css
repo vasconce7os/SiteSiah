@@ -929,3 +929,23 @@ header#topo > div > label
 {
 	clear:both;
 }
+
+/* Mensagens de error do model do CakePHP */
+.error .error-message
+{
+	color: #B94560;
+	margin-left: 250px;
+	font-style: oblique;
+}
+.error input
+{
+	color: #B94560;
+	border: solid 1px;
+}
+
+
+div.input
+{
+	//border: solid 1px;
+	margin: 15px 2px;
+}

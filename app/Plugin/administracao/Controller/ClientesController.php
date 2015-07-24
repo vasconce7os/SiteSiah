@@ -101,32 +101,41 @@ class ClientesController extends AdministracaoAppController
 						//echo($resposta);
 						/* */
                         //exit;
+                        $this-> Cliente-> set($dadosParaDb);
+						if ($this-> Cliente-> validates())
+						{
+                        	$retDB = $this-> Cliente-> saveAll($dadosParaDb);
+	                        if($retDB)
+	                        {
+	                        	$retEmail = $this-> enviaEmail($dadosParaDb['Cliente']['email'], "Validação de cadastro no sistema web da SIAH", $resposta, $this-> sisCliente['nome']);
+								if($retEmail)
+								{
+		                            $this-> Session->setFlash("Cliente cadastrado"
+		                                , 'default'
+		                                , array('class' => $this-> successMsgClass));
+		                        } else
+								{
+		                            $this-> Session->setFlash("Não foi possível enviar o email de confirmação do cliente"
+		                                , 'default'
+		                                , array('class' => $this-> msgErro));
+								}
+								
+	                            $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
 
-                        $retDB = $this-> Cliente-> saveAll($dadosParaDb);
-                        if($retDB)
-                        {
-                        	$retEmail = $this-> enviaEmail($dadosParaDb['Cliente']['email'], "Validação de cadastro no sistema web da SIAH", $resposta, $this-> sisCliente['nome']);
-							if($retEmail)
-							{
-	                            $this-> Session->setFlash("Cliente cadastrado"
-	                                , 'default'
-	                                , array('class' => $this-> successMsgClass));
 	                        } else
-							{
-	                            $this-> Session->setFlash("Não foi possível enviar o email de confirmação do cliente"
+	                        {
+								$this-> Session->setFlash("Erro ao inserir no banco de dados!"
 	                                , 'default'
-	                                , array('class' => $this-> msgErro));
-							}
-							
-                            $this-> redirect(array("plugin"=> 'administracao', "controller"=> 'clientes', 'action'=> 'index'));
+	                                , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro                        
+	                        }
                         } else
                         {
-                            $this-> Session->setFlash("Erro ao inserir no banco de dados!"
+							$this-> Session->setFlash("Preencha o formulário corretamente!"
                                 , 'default'
                                 , array('class' => 'msgErro')); //msgSucesso, msgAtencao, msgErro                        
-                        //}
+                        }
                     //}
-                }
+                //}
                 //exit;
 	        } catch (Exception $exc) 
 	        {
