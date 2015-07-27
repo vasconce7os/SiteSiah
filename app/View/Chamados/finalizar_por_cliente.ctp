@@ -36,7 +36,12 @@ View/Chamados/finaliza_por_cliente.ctp
 
 		<?php
 		//echo $this-> Form-> input('satisfação', array('label'=> "O seu grau de satisfação com este atendimento é", 'type'=> "text"));
-		echo $this-> Form-> input('Chamado.satisfacao', array('type'=> NULL));
+		//echo $this-> Form-> input('Chamado.satisfacao', array('type'=> NULL));
+		$sizes = array('s' => 'Small', 'm' => 'Medium', 'l' => 'Large');
+echo $this->Form->input(
+    'size',
+    array('options' => $sizes, 'default' => 'm')
+);
 		?>
 
 		<?php
