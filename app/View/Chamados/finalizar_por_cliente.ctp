@@ -31,18 +31,34 @@ View/Chamados/finaliza_por_cliente.ctp
 		?>
 
 		<?php
-		echo $this-> Form-> input('nota', array('label'=> "Dê uma nota para o atendimento", 'min'=> 0, 'max'=> 10, 'step'=> 1));
+		echo $this-> Form-> input('nota', array('label'=> "Dê uma nota para o atendimento", 'min'=> 0, 'max'=> 10, 'step'=> 1, 'placeholder'=> "número de 0 a 10", 'required'));
 		?>
 
 		<?php
 		//echo $this-> Form-> input('satisfação', array('label'=> "O seu grau de satisfação com este atendimento é", 'type'=> "text"));
 		//echo $this-> Form-> input('Chamado.satisfacao', array('type'=> NULL));
-		$sizes = array('s' => 'Small', 'm' => 'Medium', 'l' => 'Large');
-echo $this->Form->input(
-    'size',
-    array('options' => $sizes, 'default' => 'm')
-);
+		$sizes = array
+			(
+				array(
+					'name'=> 'selecione',
+					'value' => '',
+	                'disabled' => TRUE,
+	                'selected' => TRUE
+	            ), 
+				'ruim'=> 'ruim', 
+				'regular'=> 'regular', 
+				'bom'=> 'bom', 
+				'ótimo'=> 'ótimo'
+			);
+
+		echo $this-> Form-> input
+		(
+			'Chamado.satisfacao',
+			array('type' => 'select', 'options' => $sizes, 'label'=> "Satisfação", 'required')
+		);
 		?>
+
+
 
 		<?php
 		//echo $this-> Form-> input('Chamadomsg.0.msg', array());
